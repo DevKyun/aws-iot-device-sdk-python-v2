@@ -14,13 +14,14 @@ class IotIdentityClient(awsiot.MqttServiceClient):
         """
         API Docs: https://docs.aws.amazon.com/iot/latest/developerguide/provision-wo-cert.html#fleet-provision-api
 
-        Parameters:
-        request - `CreateCertificateFromCsrRequest` instance.
-        qos     - The Quality of Service guarantee of this message
+        Args:
+            request: `CreateCertificateFromCsrRequest` instance.
+            qos: The Quality of Service guarantee of this message
 
-        Returns a concurrent.futures.Future, whose result will be None if the
-        request is successfully published. The Future's result will be an
-        exception if the request cannot be published.
+        Returns:
+            A `concurrent.futures.Future`, whose result will be None if the
+            request is successfully published. The Future's result will be an
+            exception if the request cannot be published.
         """
 
         return self._publish_operation(
@@ -33,13 +34,14 @@ class IotIdentityClient(awsiot.MqttServiceClient):
         """
         API Docs: https://docs.aws.amazon.com/iot/latest/developerguide/provision-wo-cert.html#fleet-provision-api
 
-        Parameters:
-        request - `CreateKeysAndCertificateRequest` instance.
-        qos     - The Quality of Service guarantee of this message
+        Args:
+            request: `CreateKeysAndCertificateRequest` instance.
+            qos: The Quality of Service guarantee of this message
 
-        Returns a concurrent.futures.Future, whose result will be None if the
-        request is successfully published. The Future's result will be an
-        exception if the request cannot be published.
+        Returns:
+            A `concurrent.futures.Future`, whose result will be None if the
+            request is successfully published. The Future's result will be an
+            exception if the request cannot be published.
         """
 
         return self._publish_operation(
@@ -52,13 +54,14 @@ class IotIdentityClient(awsiot.MqttServiceClient):
         """
         API Docs: https://docs.aws.amazon.com/iot/latest/developerguide/provision-wo-cert.html#fleet-provision-api
 
-        Parameters:
-        request - `RegisterThingRequest` instance.
-        qos     - The Quality of Service guarantee of this message
+        Args:
+            request: `RegisterThingRequest` instance.
+            qos: The Quality of Service guarantee of this message
 
-        Returns a concurrent.futures.Future, whose result will be None if the
-        request is successfully published. The Future's result will be an
-        exception if the request cannot be published.
+        Returns:
+            A `concurrent.futures.Future`, whose result will be None if the
+            request is successfully published. The Future's result will be an
+            exception if the request cannot be published.
         """
         if not request.template_name:
             raise ValueError("request.template_name is required")
@@ -73,19 +76,20 @@ class IotIdentityClient(awsiot.MqttServiceClient):
         """
         API Docs: https://docs.aws.amazon.com/iot/latest/developerguide/provision-wo-cert.html#fleet-provision-api
 
-        Parameters:
-        request - `CreateCertificateFromCsrSubscriptionRequest` instance.
-        qos     - The Quality of Service guarantee of this message
-        callback - Callback to invoke each time the event is received.
-                The callback should take 1 argument of type `CreateCertificateFromCsrResponse`.
-                The callback is not expected to return anything.
+        Args:
+            request: `CreateCertificateFromCsrSubscriptionRequest` instance.
+            qos: The Quality of Service guarantee of this message
+            callback: Callback to invoke each time the event is received.
+                    The callback should take 1 argument of type `CreateCertificateFromCsrResponse`.
+                    The callback is not expected to return anything.
 
-        Returns two values immediately. The first is a `concurrent.futures.Future`
-        which will contain a result of `None` when the server has acknowledged
-        the subscription, or an exception if the subscription fails. The second
-        value is a topic which may be passed to `unsubscribe()` to stop
-        receiving messages. Note that messages may arrive before the
-        subscription is acknowledged.
+        Returns:
+            Two values immediately. The first is a `concurrent.futures.Future`
+            which will contain a result of `None` when the server has acknowledged
+            the subscription, or an exception if the subscription fails. The second
+            value is a topic which may be passed to `unsubscribe()` to stop
+            receiving messages. Note that messages may arrive before the
+            subscription is acknowledged.
         """
 
         if not callable(callback):
@@ -102,19 +106,20 @@ class IotIdentityClient(awsiot.MqttServiceClient):
         """
         API Docs: https://docs.aws.amazon.com/iot/latest/developerguide/provision-wo-cert.html#fleet-provision-api
 
-        Parameters:
-        request - `CreateCertificateFromCsrSubscriptionRequest` instance.
-        qos     - The Quality of Service guarantee of this message
-        callback - Callback to invoke each time the event is received.
-                The callback should take 1 argument of type `ErrorResponse`.
-                The callback is not expected to return anything.
+        Args:
+            request: `CreateCertificateFromCsrSubscriptionRequest` instance.
+            qos: The Quality of Service guarantee of this message
+            callback: Callback to invoke each time the event is received.
+                    The callback should take 1 argument of type `ErrorResponse`.
+                    The callback is not expected to return anything.
 
-        Returns two values immediately. The first is a `concurrent.futures.Future`
-        which will contain a result of `None` when the server has acknowledged
-        the subscription, or an exception if the subscription fails. The second
-        value is a topic which may be passed to `unsubscribe()` to stop
-        receiving messages. Note that messages may arrive before the
-        subscription is acknowledged.
+        Returns:
+            Two values immediately. The first is a `concurrent.futures.Future`
+            which will contain a result of `None` when the server has acknowledged
+            the subscription, or an exception if the subscription fails. The second
+            value is a topic which may be passed to `unsubscribe()` to stop
+            receiving messages. Note that messages may arrive before the
+            subscription is acknowledged.
         """
 
         if not callable(callback):
@@ -131,19 +136,20 @@ class IotIdentityClient(awsiot.MqttServiceClient):
         """
         API Docs: https://docs.aws.amazon.com/iot/latest/developerguide/provision-wo-cert.html#fleet-provision-api
 
-        Parameters:
-        request - `CreateKeysAndCertificateSubscriptionRequest` instance.
-        qos     - The Quality of Service guarantee of this message
-        callback - Callback to invoke each time the event is received.
-                The callback should take 1 argument of type `CreateKeysAndCertificateResponse`.
-                The callback is not expected to return anything.
+        Args:
+            request: `CreateKeysAndCertificateSubscriptionRequest` instance.
+            qos: The Quality of Service guarantee of this message
+            callback: Callback to invoke each time the event is received.
+                    The callback should take 1 argument of type `CreateKeysAndCertificateResponse`.
+                    The callback is not expected to return anything.
 
-        Returns two values immediately. The first is a `concurrent.futures.Future`
-        which will contain a result of `None` when the server has acknowledged
-        the subscription, or an exception if the subscription fails. The second
-        value is a topic which may be passed to `unsubscribe()` to stop
-        receiving messages. Note that messages may arrive before the
-        subscription is acknowledged.
+        Returns:
+            Two values immediately. The first is a `concurrent.futures.Future`
+            which will contain a result of `None` when the server has acknowledged
+            the subscription, or an exception if the subscription fails. The second
+            value is a topic which may be passed to `unsubscribe()` to stop
+            receiving messages. Note that messages may arrive before the
+            subscription is acknowledged.
         """
 
         if not callable(callback):
@@ -160,19 +166,20 @@ class IotIdentityClient(awsiot.MqttServiceClient):
         """
         API Docs: https://docs.aws.amazon.com/iot/latest/developerguide/provision-wo-cert.html#fleet-provision-api
 
-        Parameters:
-        request - `CreateKeysAndCertificateSubscriptionRequest` instance.
-        qos     - The Quality of Service guarantee of this message
-        callback - Callback to invoke each time the event is received.
-                The callback should take 1 argument of type `ErrorResponse`.
-                The callback is not expected to return anything.
+        Args:
+            request: `CreateKeysAndCertificateSubscriptionRequest` instance.
+            qos: The Quality of Service guarantee of this message
+            callback: Callback to invoke each time the event is received.
+                    The callback should take 1 argument of type `ErrorResponse`.
+                    The callback is not expected to return anything.
 
-        Returns two values immediately. The first is a `concurrent.futures.Future`
-        which will contain a result of `None` when the server has acknowledged
-        the subscription, or an exception if the subscription fails. The second
-        value is a topic which may be passed to `unsubscribe()` to stop
-        receiving messages. Note that messages may arrive before the
-        subscription is acknowledged.
+        Returns:
+            Two values immediately. The first is a `concurrent.futures.Future`
+            which will contain a result of `None` when the server has acknowledged
+            the subscription, or an exception if the subscription fails. The second
+            value is a topic which may be passed to `unsubscribe()` to stop
+            receiving messages. Note that messages may arrive before the
+            subscription is acknowledged.
         """
 
         if not callable(callback):
@@ -189,19 +196,20 @@ class IotIdentityClient(awsiot.MqttServiceClient):
         """
         API Docs: https://docs.aws.amazon.com/iot/latest/developerguide/provision-wo-cert.html#fleet-provision-api
 
-        Parameters:
-        request - `RegisterThingSubscriptionRequest` instance.
-        qos     - The Quality of Service guarantee of this message
-        callback - Callback to invoke each time the event is received.
-                The callback should take 1 argument of type `RegisterThingResponse`.
-                The callback is not expected to return anything.
+        Args:
+            request: `RegisterThingSubscriptionRequest` instance.
+            qos: The Quality of Service guarantee of this message
+            callback: Callback to invoke each time the event is received.
+                    The callback should take 1 argument of type `RegisterThingResponse`.
+                    The callback is not expected to return anything.
 
-        Returns two values immediately. The first is a `concurrent.futures.Future`
-        which will contain a result of `None` when the server has acknowledged
-        the subscription, or an exception if the subscription fails. The second
-        value is a topic which may be passed to `unsubscribe()` to stop
-        receiving messages. Note that messages may arrive before the
-        subscription is acknowledged.
+        Returns:
+            Two values immediately. The first is a `concurrent.futures.Future`
+            which will contain a result of `None` when the server has acknowledged
+            the subscription, or an exception if the subscription fails. The second
+            value is a topic which may be passed to `unsubscribe()` to stop
+            receiving messages. Note that messages may arrive before the
+            subscription is acknowledged.
         """
         if not request.template_name:
             raise ValueError("request.template_name is required")
@@ -220,19 +228,20 @@ class IotIdentityClient(awsiot.MqttServiceClient):
         """
         API Docs: https://docs.aws.amazon.com/iot/latest/developerguide/provision-wo-cert.html#fleet-provision-api
 
-        Parameters:
-        request - `RegisterThingSubscriptionRequest` instance.
-        qos     - The Quality of Service guarantee of this message
-        callback - Callback to invoke each time the event is received.
-                The callback should take 1 argument of type `ErrorResponse`.
-                The callback is not expected to return anything.
+        Args:
+            request: `RegisterThingSubscriptionRequest` instance.
+            qos: The Quality of Service guarantee of this message
+            callback: Callback to invoke each time the event is received.
+                    The callback should take 1 argument of type `ErrorResponse`.
+                    The callback is not expected to return anything.
 
-        Returns two values immediately. The first is a `concurrent.futures.Future`
-        which will contain a result of `None` when the server has acknowledged
-        the subscription, or an exception if the subscription fails. The second
-        value is a topic which may be passed to `unsubscribe()` to stop
-        receiving messages. Note that messages may arrive before the
-        subscription is acknowledged.
+        Returns:
+            Two values immediately. The first is a `concurrent.futures.Future`
+            which will contain a result of `None` when the server has acknowledged
+            the subscription, or an exception if the subscription fails. The second
+            value is a topic which may be passed to `unsubscribe()` to stop
+            receiving messages. Note that messages may arrive before the
+            subscription is acknowledged.
         """
         if not request.template_name:
             raise ValueError("request.template_name is required")
@@ -249,7 +258,7 @@ class IotIdentityClient(awsiot.MqttServiceClient):
 class CreateCertificateFromCsrRequest(awsiot.ModeledClass):
     r"""
     Attributes:
-        * *certificate_signing_request* (``str``)
+        certificate_signing_request (``str``):
 
     All attributes are None by default, and may be set by keyword in the constructor.
     """
@@ -259,11 +268,8 @@ class CreateCertificateFromCsrRequest(awsiot.ModeledClass):
     def __init__(self, *args, **kwargs):
         r"""Initializes a CreateCertificateFromCsrRequest instance
 
-        :param \**kwargs:
-            See below
-
-        :Keyword Arguments:
-            * *certificate_signing_request* (``str``)
+        Args:
+            certificate_signing_request (``str``):
         """
 
         self.certificate_signing_request = kwargs.get('certificate_signing_request')
@@ -282,9 +288,9 @@ class CreateCertificateFromCsrRequest(awsiot.ModeledClass):
 class CreateCertificateFromCsrResponse(awsiot.ModeledClass):
     r"""
     Attributes:
-        * *certificate_id* (``str``)
-        * *certificate_ownership_token* (``str``)
-        * *certificate_pem* (``str``)
+        certificate_id (``str``):
+        certificate_ownership_token (``str``):
+        certificate_pem (``str``):
 
     All attributes are None by default, and may be set by keyword in the constructor.
     """
@@ -294,13 +300,10 @@ class CreateCertificateFromCsrResponse(awsiot.ModeledClass):
     def __init__(self, *args, **kwargs):
         r"""Initializes a CreateCertificateFromCsrResponse instance
 
-        :param \**kwargs:
-            See below
-
-        :Keyword Arguments:
-            * *certificate_id* (``str``)
-            * *certificate_ownership_token* (``str``)
-            * *certificate_pem* (``str``)
+        Args:
+            certificate_id (``str``):
+            certificate_ownership_token (``str``):
+            certificate_pem (``str``):
         """
 
         self.certificate_id = kwargs.get('certificate_id')
@@ -327,21 +330,13 @@ class CreateCertificateFromCsrResponse(awsiot.ModeledClass):
         return new
 
 class CreateCertificateFromCsrSubscriptionRequest(awsiot.ModeledClass):
-    r"""
-    Attributes:
-
-    All attributes are None by default, and may be set by keyword in the constructor.
-    """
 
     __slots__ = []
 
     def __init__(self, *args, **kwargs):
         r"""Initializes a CreateCertificateFromCsrSubscriptionRequest instance
 
-        :param \**kwargs:
-            See below
-
-        :Keyword Arguments:
+        Args:
         """
 
         # for backwards compatibility, read any arguments that used to be accepted by position
@@ -349,21 +344,13 @@ class CreateCertificateFromCsrSubscriptionRequest(awsiot.ModeledClass):
             setattr(self, key, val)
 
 class CreateKeysAndCertificateRequest(awsiot.ModeledClass):
-    r"""
-    Attributes:
-
-    All attributes are None by default, and may be set by keyword in the constructor.
-    """
 
     __slots__ = []
 
     def __init__(self, *args, **kwargs):
         r"""Initializes a CreateKeysAndCertificateRequest instance
 
-        :param \**kwargs:
-            See below
-
-        :Keyword Arguments:
+        Args:
         """
 
         # for backwards compatibility, read any arguments that used to be accepted by position
@@ -373,10 +360,10 @@ class CreateKeysAndCertificateRequest(awsiot.ModeledClass):
 class CreateKeysAndCertificateResponse(awsiot.ModeledClass):
     r"""
     Attributes:
-        * *certificate_id* (``str``)
-        * *certificate_ownership_token* (``str``)
-        * *certificate_pem* (``str``)
-        * *private_key* (``str``)
+        certificate_id (``str``):
+        certificate_ownership_token (``str``):
+        certificate_pem (``str``):
+        private_key (``str``):
 
     All attributes are None by default, and may be set by keyword in the constructor.
     """
@@ -386,14 +373,11 @@ class CreateKeysAndCertificateResponse(awsiot.ModeledClass):
     def __init__(self, *args, **kwargs):
         r"""Initializes a CreateKeysAndCertificateResponse instance
 
-        :param \**kwargs:
-            See below
-
-        :Keyword Arguments:
-            * *certificate_id* (``str``)
-            * *certificate_ownership_token* (``str``)
-            * *certificate_pem* (``str``)
-            * *private_key* (``str``)
+        Args:
+            certificate_id (``str``):
+            certificate_ownership_token (``str``):
+            certificate_pem (``str``):
+            private_key (``str``):
         """
 
         self.certificate_id = kwargs.get('certificate_id')
@@ -424,21 +408,13 @@ class CreateKeysAndCertificateResponse(awsiot.ModeledClass):
         return new
 
 class CreateKeysAndCertificateSubscriptionRequest(awsiot.ModeledClass):
-    r"""
-    Attributes:
-
-    All attributes are None by default, and may be set by keyword in the constructor.
-    """
 
     __slots__ = []
 
     def __init__(self, *args, **kwargs):
         r"""Initializes a CreateKeysAndCertificateSubscriptionRequest instance
 
-        :param \**kwargs:
-            See below
-
-        :Keyword Arguments:
+        Args:
         """
 
         # for backwards compatibility, read any arguments that used to be accepted by position
@@ -448,9 +424,9 @@ class CreateKeysAndCertificateSubscriptionRequest(awsiot.ModeledClass):
 class ErrorResponse(awsiot.ModeledClass):
     r"""
     Attributes:
-        * *error_code* (``str``)
-        * *error_message* (``str``)
-        * *status_code* (``int``)
+        error_code (``str``):
+        error_message (``str``):
+        status_code (``int``):
 
     All attributes are None by default, and may be set by keyword in the constructor.
     """
@@ -460,13 +436,10 @@ class ErrorResponse(awsiot.ModeledClass):
     def __init__(self, *args, **kwargs):
         r"""Initializes a ErrorResponse instance
 
-        :param \**kwargs:
-            See below
-
-        :Keyword Arguments:
-            * *error_code* (``str``)
-            * *error_message* (``str``)
-            * *status_code* (``int``)
+        Args:
+            error_code (``str``):
+            error_message (``str``):
+            status_code (``int``):
         """
 
         self.error_code = kwargs.get('error_code')
@@ -495,9 +468,9 @@ class ErrorResponse(awsiot.ModeledClass):
 class RegisterThingRequest(awsiot.ModeledClass):
     r"""
     Attributes:
-        * *certificate_ownership_token* (``str``)
-        * *parameters* (``typing.Dict[str, str]``)
-        * *template_name* (``str``)
+        certificate_ownership_token (``str``):
+        parameters (``typing.Dict[str, str]``):
+        template_name (``str``):
 
     All attributes are None by default, and may be set by keyword in the constructor.
     """
@@ -507,13 +480,10 @@ class RegisterThingRequest(awsiot.ModeledClass):
     def __init__(self, *args, **kwargs):
         r"""Initializes a RegisterThingRequest instance
 
-        :param \**kwargs:
-            See below
-
-        :Keyword Arguments:
-            * *certificate_ownership_token* (``str``)
-            * *parameters* (``typing.Dict[str, str]``)
-            * *template_name* (``str``)
+        Args:
+            certificate_ownership_token (``str``):
+            parameters (``typing.Dict[str, str]``):
+            template_name (``str``):
         """
 
         self.certificate_ownership_token = kwargs.get('certificate_ownership_token')
@@ -536,8 +506,8 @@ class RegisterThingRequest(awsiot.ModeledClass):
 class RegisterThingResponse(awsiot.ModeledClass):
     r"""
     Attributes:
-        * *device_configuration* (``typing.Dict[str, str]``)
-        * *thing_name* (``str``)
+        device_configuration (``typing.Dict[str, str]``):
+        thing_name (``str``):
 
     All attributes are None by default, and may be set by keyword in the constructor.
     """
@@ -547,12 +517,9 @@ class RegisterThingResponse(awsiot.ModeledClass):
     def __init__(self, *args, **kwargs):
         r"""Initializes a RegisterThingResponse instance
 
-        :param \**kwargs:
-            See below
-
-        :Keyword Arguments:
-            * *device_configuration* (``typing.Dict[str, str]``)
-            * *thing_name* (``str``)
+        Args:
+            device_configuration (``typing.Dict[str, str]``):
+            thing_name (``str``):
         """
 
         self.device_configuration = kwargs.get('device_configuration')
@@ -577,7 +544,7 @@ class RegisterThingResponse(awsiot.ModeledClass):
 class RegisterThingSubscriptionRequest(awsiot.ModeledClass):
     r"""
     Attributes:
-        * *template_name* (``str``)
+        template_name (``str``):
 
     All attributes are None by default, and may be set by keyword in the constructor.
     """
@@ -587,11 +554,8 @@ class RegisterThingSubscriptionRequest(awsiot.ModeledClass):
     def __init__(self, *args, **kwargs):
         r"""Initializes a RegisterThingSubscriptionRequest instance
 
-        :param \**kwargs:
-            See below
-
-        :Keyword Arguments:
-            * *template_name* (``str``)
+        Args:
+            template_name (``str``):
         """
 
         self.template_name = kwargs.get('template_name')

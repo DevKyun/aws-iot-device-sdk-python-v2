@@ -45,9 +45,10 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 
 # -- Options for HTML output -------------------------------------------------
 
-autoclass_content = "both"
-autodoc_default_flags = ['show-inheritance','members','undoc-members']
+# 'bysource' prevents enums from sorting in alphabetical order
 autodoc_member_order = 'bysource'
+
+autodoc_default_flags = ['show-inheritance', 'members', 'undoc-members']
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.

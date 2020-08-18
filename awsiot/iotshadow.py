@@ -15,13 +15,14 @@ class IotShadowClient(awsiot.MqttServiceClient):
         """
         API Docs: https://docs.aws.amazon.com/iot/latest/developerguide/device-shadow-mqtt.html#delete-pub-sub-topic
 
-        Parameters:
-        request - `DeleteNamedShadowRequest` instance.
-        qos     - The Quality of Service guarantee of this message
+        Args:
+            request: `DeleteNamedShadowRequest` instance.
+        	qos: The Quality of Service guarantee of this message
 
-        Returns a concurrent.futures.Future, whose result will be None if the
-        request is successfully published. The Future's result will be an
-        exception if the request cannot be published.
+        Returns:
+            A `concurrent.futures.Future`, whose result will be None if the
+            request is successfully published. The Future's result will be an
+            exception if the request cannot be published.
         """
         if not request.shadow_name:
             raise ValueError("request.shadow_name is required")
@@ -38,13 +39,14 @@ class IotShadowClient(awsiot.MqttServiceClient):
         """
         API Docs: https://docs.aws.amazon.com/iot/latest/developerguide/device-shadow-mqtt.html#delete-pub-sub-topic
 
-        Parameters:
-        request - `DeleteShadowRequest` instance.
-        qos     - The Quality of Service guarantee of this message
+        Args:
+        	request: `DeleteShadowRequest` instance.
+        	qos: The Quality of Service guarantee of this message
 
-        Returns a concurrent.futures.Future, whose result will be None if the
-        request is successfully published. The Future's result will be an
-        exception if the request cannot be published.
+        Returns:
+            A `concurrent.futures.Future`, whose result will be None if the
+            request is successfully published. The Future's result will be an
+            exception if the request cannot be published.
         """
         if not request.thing_name:
             raise ValueError("request.thing_name is required")
@@ -59,13 +61,14 @@ class IotShadowClient(awsiot.MqttServiceClient):
         """
         API Docs: https://docs.aws.amazon.com/iot/latest/developerguide/device-shadow-mqtt.html#get-pub-sub-topic
 
-        Parameters:
-        request - `GetNamedShadowRequest` instance.
-        qos     - The Quality of Service guarantee of this message
+        Args:
+        	request: `GetNamedShadowRequest` instance.
+        	qos: The Quality of Service guarantee of this message
 
-        Returns a concurrent.futures.Future, whose result will be None if the
-        request is successfully published. The Future's result will be an
-        exception if the request cannot be published.
+        Returns:
+            A `concurrent.futures.Future`, whose result will be None if the
+            request is successfully published. The Future's result will be an
+            exception if the request cannot be published.
         """
         if not request.shadow_name:
             raise ValueError("request.shadow_name is required")
@@ -82,13 +85,14 @@ class IotShadowClient(awsiot.MqttServiceClient):
         """
         API Docs: https://docs.aws.amazon.com/iot/latest/developerguide/device-shadow-mqtt.html#get-pub-sub-topic
 
-        Parameters:
-        request - `GetShadowRequest` instance.
-        qos     - The Quality of Service guarantee of this message
+        Args:
+        	request: `GetShadowRequest` instance.
+        	qos: The Quality of Service guarantee of this message
 
-        Returns a concurrent.futures.Future, whose result will be None if the
-        request is successfully published. The Future's result will be an
-        exception if the request cannot be published.
+        Returns:
+            A `concurrent.futures.Future`, whose result will be None if the
+            request is successfully published. The Future's result will be an
+            exception if the request cannot be published.
         """
         if not request.thing_name:
             raise ValueError("request.thing_name is required")
@@ -103,13 +107,14 @@ class IotShadowClient(awsiot.MqttServiceClient):
         """
         API Docs: https://docs.aws.amazon.com/iot/latest/developerguide/device-shadow-mqtt.html#update-pub-sub-topic
 
-        Parameters:
-        request - `UpdateNamedShadowRequest` instance.
-        qos     - The Quality of Service guarantee of this message
+        Args:
+        	request: `UpdateNamedShadowRequest` instance.
+        	qos: The Quality of Service guarantee of this message
 
-        Returns a concurrent.futures.Future, whose result will be None if the
-        request is successfully published. The Future's result will be an
-        exception if the request cannot be published.
+        Returns:
+            A `concurrent.futures.Future`, whose result will be None if the
+            request is successfully published. The Future's result will be an
+            exception if the request cannot be published.
         """
         if not request.shadow_name:
             raise ValueError("request.shadow_name is required")
@@ -126,13 +131,14 @@ class IotShadowClient(awsiot.MqttServiceClient):
         """
         API Docs: https://docs.aws.amazon.com/iot/latest/developerguide/device-shadow-mqtt.html#update-pub-sub-topic
 
-        Parameters:
-        request - `UpdateShadowRequest` instance.
-        qos     - The Quality of Service guarantee of this message
+        Args:
+        	request: `UpdateShadowRequest` instance.
+        	qos: The Quality of Service guarantee of this message
 
-        Returns a concurrent.futures.Future, whose result will be None if the
-        request is successfully published. The Future's result will be an
-        exception if the request cannot be published.
+        Returns:
+            A `concurrent.futures.Future`, whose result will be None if the
+            request is successfully published. The Future's result will be an
+            exception if the request cannot be published.
         """
         if not request.thing_name:
             raise ValueError("request.thing_name is required")
@@ -147,19 +153,20 @@ class IotShadowClient(awsiot.MqttServiceClient):
         """
         API Docs: https://docs.aws.amazon.com/iot/latest/developerguide/device-shadow-mqtt.html#delete-accepted-pub-sub-topic
 
-        Parameters:
-        request - `DeleteNamedShadowSubscriptionRequest` instance.
-        qos     - The Quality of Service guarantee of this message
-        callback - Callback to invoke each time the event is received.
-                The callback should take 1 argument of type `DeleteShadowResponse`.
-                The callback is not expected to return anything.
+        Args:
+        	request: `DeleteNamedShadowSubscriptionRequest` instance.
+        	qos: The Quality of Service guarantee of this message
+        	callback: Callback to invoke each time the event is received.
+                    The callback should take 1 argument of type `DeleteShadowResponse`.
+                    The callback is not expected to return anything.
 
-        Returns two values immediately. The first is a `concurrent.futures.Future`
-        which will contain a result of `None` when the server has acknowledged
-        the subscription, or an exception if the subscription fails. The second
-        value is a topic which may be passed to `unsubscribe()` to stop
-        receiving messages. Note that messages may arrive before the
-        subscription is acknowledged.
+        Returns:
+            Two values immediately. The first is a `concurrent.futures.Future`
+            which will contain a result of `None` when the server has acknowledged
+            the subscription, or an exception if the subscription fails. The second
+            value is a topic which may be passed to `unsubscribe()` to stop
+            receiving messages. Note that messages may arrive before the
+            subscription is acknowledged.
         """
         if not request.thing_name:
             raise ValueError("request.thing_name is required")
@@ -180,19 +187,20 @@ class IotShadowClient(awsiot.MqttServiceClient):
         """
         API Docs: https://docs.aws.amazon.com/iot/latest/developerguide/device-shadow-mqtt.html#delete-rejected-pub-sub-topic
 
-        Parameters:
-        request - `DeleteNamedShadowSubscriptionRequest` instance.
-        qos     - The Quality of Service guarantee of this message
-        callback - Callback to invoke each time the event is received.
-                The callback should take 1 argument of type `ErrorResponse`.
-                The callback is not expected to return anything.
+        Args:
+        	request: `DeleteNamedShadowSubscriptionRequest` instance.
+        	qos: The Quality of Service guarantee of this message
+        	callback: Callback to invoke each time the event is received.
+                    The callback should take 1 argument of type `ErrorResponse`.
+                    The callback is not expected to return anything.
 
-        Returns two values immediately. The first is a `concurrent.futures.Future`
-        which will contain a result of `None` when the server has acknowledged
-        the subscription, or an exception if the subscription fails. The second
-        value is a topic which may be passed to `unsubscribe()` to stop
-        receiving messages. Note that messages may arrive before the
-        subscription is acknowledged.
+        Returns:
+            Two values immediately. The first is a `concurrent.futures.Future`
+            which will contain a result of `None` when the server has acknowledged
+            the subscription, or an exception if the subscription fails. The second
+            value is a topic which may be passed to `unsubscribe()` to stop
+            receiving messages. Note that messages may arrive before the
+            subscription is acknowledged.
         """
         if not request.thing_name:
             raise ValueError("request.thing_name is required")
@@ -213,19 +221,20 @@ class IotShadowClient(awsiot.MqttServiceClient):
         """
         API Docs: https://docs.aws.amazon.com/iot/latest/developerguide/device-shadow-mqtt.html#delete-accepted-pub-sub-topic
 
-        Parameters:
-        request - `DeleteShadowSubscriptionRequest` instance.
-        qos     - The Quality of Service guarantee of this message
-        callback - Callback to invoke each time the event is received.
-                The callback should take 1 argument of type `DeleteShadowResponse`.
-                The callback is not expected to return anything.
+        Args:
+        	request: `DeleteShadowSubscriptionRequest` instance.
+        	qos: The Quality of Service guarantee of this message
+        	callback: Callback to invoke each time the event is received.
+                    The callback should take 1 argument of type `DeleteShadowResponse`.
+                    The callback is not expected to return anything.
 
-        Returns two values immediately. The first is a `concurrent.futures.Future`
-        which will contain a result of `None` when the server has acknowledged
-        the subscription, or an exception if the subscription fails. The second
-        value is a topic which may be passed to `unsubscribe()` to stop
-        receiving messages. Note that messages may arrive before the
-        subscription is acknowledged.
+        Returns:
+            Two values immediately. The first is a `concurrent.futures.Future`
+            which will contain a result of `None` when the server has acknowledged
+            the subscription, or an exception if the subscription fails. The second
+            value is a topic which may be passed to `unsubscribe()` to stop
+            receiving messages. Note that messages may arrive before the
+            subscription is acknowledged.
         """
         if not request.thing_name:
             raise ValueError("request.thing_name is required")
@@ -244,19 +253,20 @@ class IotShadowClient(awsiot.MqttServiceClient):
         """
         API Docs: https://docs.aws.amazon.com/iot/latest/developerguide/device-shadow-mqtt.html#delete-rejected-pub-sub-topic
 
-        Parameters:
-        request - `DeleteShadowSubscriptionRequest` instance.
-        qos     - The Quality of Service guarantee of this message
-        callback - Callback to invoke each time the event is received.
-                The callback should take 1 argument of type `ErrorResponse`.
-                The callback is not expected to return anything.
+        Args:
+        	request: `DeleteShadowSubscriptionRequest` instance.
+        	qos: The Quality of Service guarantee of this message
+        	callback: Callback to invoke each time the event is received.
+                    The callback should take 1 argument of type `ErrorResponse`.
+                    The callback is not expected to return anything.
 
-        Returns two values immediately. The first is a `concurrent.futures.Future`
-        which will contain a result of `None` when the server has acknowledged
-        the subscription, or an exception if the subscription fails. The second
-        value is a topic which may be passed to `unsubscribe()` to stop
-        receiving messages. Note that messages may arrive before the
-        subscription is acknowledged.
+        Returns:
+            Two values immediately. The first is a `concurrent.futures.Future`
+            which will contain a result of `None` when the server has acknowledged
+            the subscription, or an exception if the subscription fails. The second
+            value is a topic which may be passed to `unsubscribe()` to stop
+            receiving messages. Note that messages may arrive before the
+            subscription is acknowledged.
         """
         if not request.thing_name:
             raise ValueError("request.thing_name is required")
@@ -275,19 +285,20 @@ class IotShadowClient(awsiot.MqttServiceClient):
         """
         API Docs: https://docs.aws.amazon.com/iot/latest/developerguide/device-shadow-mqtt.html#get-accepted-pub-sub-topic
 
-        Parameters:
-        request - `GetNamedShadowSubscriptionRequest` instance.
-        qos     - The Quality of Service guarantee of this message
-        callback - Callback to invoke each time the event is received.
-                The callback should take 1 argument of type `GetShadowResponse`.
-                The callback is not expected to return anything.
+        Args:
+        	request: `GetNamedShadowSubscriptionRequest` instance.
+        	qos: The Quality of Service guarantee of this message
+        	callback: Callback to invoke each time the event is received.
+                    The callback should take 1 argument of type `GetShadowResponse`.
+                    The callback is not expected to return anything.
 
-        Returns two values immediately. The first is a `concurrent.futures.Future`
-        which will contain a result of `None` when the server has acknowledged
-        the subscription, or an exception if the subscription fails. The second
-        value is a topic which may be passed to `unsubscribe()` to stop
-        receiving messages. Note that messages may arrive before the
-        subscription is acknowledged.
+        Returns:
+            Two values immediately. The first is a `concurrent.futures.Future`
+            which will contain a result of `None` when the server has acknowledged
+            the subscription, or an exception if the subscription fails. The second
+            value is a topic which may be passed to `unsubscribe()` to stop
+            receiving messages. Note that messages may arrive before the
+            subscription is acknowledged.
         """
         if not request.thing_name:
             raise ValueError("request.thing_name is required")
@@ -308,19 +319,20 @@ class IotShadowClient(awsiot.MqttServiceClient):
         """
         API Docs: https://docs.aws.amazon.com/iot/latest/developerguide/device-shadow-mqtt.html#get-rejected-pub-sub-topic
 
-        Parameters:
-        request - `GetNamedShadowSubscriptionRequest` instance.
-        qos     - The Quality of Service guarantee of this message
-        callback - Callback to invoke each time the event is received.
-                The callback should take 1 argument of type `ErrorResponse`.
-                The callback is not expected to return anything.
+        Args:
+        	request: `GetNamedShadowSubscriptionRequest` instance.
+        	qos: The Quality of Service guarantee of this message
+        	callback: Callback to invoke each time the event is received.
+                    The callback should take 1 argument of type `ErrorResponse`.
+                    The callback is not expected to return anything.
 
-        Returns two values immediately. The first is a `concurrent.futures.Future`
-        which will contain a result of `None` when the server has acknowledged
-        the subscription, or an exception if the subscription fails. The second
-        value is a topic which may be passed to `unsubscribe()` to stop
-        receiving messages. Note that messages may arrive before the
-        subscription is acknowledged.
+        Returns:
+            Two values immediately. The first is a `concurrent.futures.Future`
+            which will contain a result of `None` when the server has acknowledged
+            the subscription, or an exception if the subscription fails. The second
+            value is a topic which may be passed to `unsubscribe()` to stop
+            receiving messages. Note that messages may arrive before the
+            subscription is acknowledged.
         """
         if not request.thing_name:
             raise ValueError("request.thing_name is required")
@@ -341,19 +353,20 @@ class IotShadowClient(awsiot.MqttServiceClient):
         """
         API Docs: https://docs.aws.amazon.com/iot/latest/developerguide/device-shadow-mqtt.html#get-accepted-pub-sub-topic
 
-        Parameters:
-        request - `GetShadowSubscriptionRequest` instance.
-        qos     - The Quality of Service guarantee of this message
-        callback - Callback to invoke each time the event is received.
-                The callback should take 1 argument of type `GetShadowResponse`.
-                The callback is not expected to return anything.
+        Args:
+        	request: `GetShadowSubscriptionRequest` instance.
+        	qos: The Quality of Service guarantee of this message
+        	callback: Callback to invoke each time the event is received.
+                    The callback should take 1 argument of type `GetShadowResponse`.
+                    The callback is not expected to return anything.
 
-        Returns two values immediately. The first is a `concurrent.futures.Future`
-        which will contain a result of `None` when the server has acknowledged
-        the subscription, or an exception if the subscription fails. The second
-        value is a topic which may be passed to `unsubscribe()` to stop
-        receiving messages. Note that messages may arrive before the
-        subscription is acknowledged.
+        Returns:
+            Two values immediately. The first is a `concurrent.futures.Future`
+            which will contain a result of `None` when the server has acknowledged
+            the subscription, or an exception if the subscription fails. The second
+            value is a topic which may be passed to `unsubscribe()` to stop
+            receiving messages. Note that messages may arrive before the
+            subscription is acknowledged.
         """
         if not request.thing_name:
             raise ValueError("request.thing_name is required")
@@ -372,19 +385,20 @@ class IotShadowClient(awsiot.MqttServiceClient):
         """
         API Docs: https://docs.aws.amazon.com/iot/latest/developerguide/device-shadow-mqtt.html#get-rejected-pub-sub-topic
 
-        Parameters:
-        request - `GetShadowSubscriptionRequest` instance.
-        qos     - The Quality of Service guarantee of this message
-        callback - Callback to invoke each time the event is received.
-                The callback should take 1 argument of type `ErrorResponse`.
-                The callback is not expected to return anything.
+        Args:
+        	request: `GetShadowSubscriptionRequest` instance.
+        	qos: The Quality of Service guarantee of this message
+        	callback: Callback to invoke each time the event is received.
+                    The callback should take 1 argument of type `ErrorResponse`.
+                    The callback is not expected to return anything.
 
-        Returns two values immediately. The first is a `concurrent.futures.Future`
-        which will contain a result of `None` when the server has acknowledged
-        the subscription, or an exception if the subscription fails. The second
-        value is a topic which may be passed to `unsubscribe()` to stop
-        receiving messages. Note that messages may arrive before the
-        subscription is acknowledged.
+        Returns:
+            Two values immediately. The first is a `concurrent.futures.Future`
+            which will contain a result of `None` when the server has acknowledged
+            the subscription, or an exception if the subscription fails. The second
+            value is a topic which may be passed to `unsubscribe()` to stop
+            receiving messages. Note that messages may arrive before the
+            subscription is acknowledged.
         """
         if not request.thing_name:
             raise ValueError("request.thing_name is required")
@@ -403,19 +417,20 @@ class IotShadowClient(awsiot.MqttServiceClient):
         """
         API Docs: https://docs.aws.amazon.com/iot/latest/developerguide/device-shadow-mqtt.html#update-delta-pub-sub-topic
 
-        Parameters:
-        request - `NamedShadowDeltaUpdatedSubscriptionRequest` instance.
-        qos     - The Quality of Service guarantee of this message
-        callback - Callback to invoke each time the event is received.
-                The callback should take 1 argument of type `ShadowDeltaUpdatedEvent`.
-                The callback is not expected to return anything.
+        Args:
+        	request: `NamedShadowDeltaUpdatedSubscriptionRequest` instance.
+        	qos: The Quality of Service guarantee of this message
+        	callback: Callback to invoke each time the event is received.
+                    The callback should take 1 argument of type `ShadowDeltaUpdatedEvent`.
+                    The callback is not expected to return anything.
 
-        Returns two values immediately. The first is a `concurrent.futures.Future`
-        which will contain a result of `None` when the server has acknowledged
-        the subscription, or an exception if the subscription fails. The second
-        value is a topic which may be passed to `unsubscribe()` to stop
-        receiving messages. Note that messages may arrive before the
-        subscription is acknowledged.
+        Returns:
+            Two values immediately. The first is a `concurrent.futures.Future`
+            which will contain a result of `None` when the server has acknowledged
+            the subscription, or an exception if the subscription fails. The second
+            value is a topic which may be passed to `unsubscribe()` to stop
+            receiving messages. Note that messages may arrive before the
+            subscription is acknowledged.
         """
         if not request.thing_name:
             raise ValueError("request.thing_name is required")
@@ -436,19 +451,20 @@ class IotShadowClient(awsiot.MqttServiceClient):
         """
         API Docs: https://docs.aws.amazon.com/iot/latest/developerguide/device-shadow-mqtt.html#update-documents-pub-sub-topic
 
-        Parameters:
-        request - `NamedShadowUpdatedSubscriptionRequest` instance.
-        qos     - The Quality of Service guarantee of this message
-        callback - Callback to invoke each time the event is received.
-                The callback should take 1 argument of type `ShadowUpdatedEvent`.
-                The callback is not expected to return anything.
+        Args:
+        	request: `NamedShadowUpdatedSubscriptionRequest` instance.
+        	qos: The Quality of Service guarantee of this message
+        	callback: Callback to invoke each time the event is received.
+                    The callback should take 1 argument of type `ShadowUpdatedEvent`.
+                    The callback is not expected to return anything.
 
-        Returns two values immediately. The first is a `concurrent.futures.Future`
-        which will contain a result of `None` when the server has acknowledged
-        the subscription, or an exception if the subscription fails. The second
-        value is a topic which may be passed to `unsubscribe()` to stop
-        receiving messages. Note that messages may arrive before the
-        subscription is acknowledged.
+        Returns:
+            Two values immediately. The first is a `concurrent.futures.Future`
+            which will contain a result of `None` when the server has acknowledged
+            the subscription, or an exception if the subscription fails. The second
+            value is a topic which may be passed to `unsubscribe()` to stop
+            receiving messages. Note that messages may arrive before the
+            subscription is acknowledged.
         """
         if not request.shadow_name:
             raise ValueError("request.shadow_name is required")
@@ -469,19 +485,20 @@ class IotShadowClient(awsiot.MqttServiceClient):
         """
         API Docs: https://docs.aws.amazon.com/iot/latest/developerguide/device-shadow-mqtt.html#update-delta-pub-sub-topic
 
-        Parameters:
-        request - `ShadowDeltaUpdatedSubscriptionRequest` instance.
-        qos     - The Quality of Service guarantee of this message
-        callback - Callback to invoke each time the event is received.
-                The callback should take 1 argument of type `ShadowDeltaUpdatedEvent`.
-                The callback is not expected to return anything.
+        Args:
+        	request: `ShadowDeltaUpdatedSubscriptionRequest` instance.
+        	qos: The Quality of Service guarantee of this message
+        	callback: Callback to invoke each time the event is received.
+                    The callback should take 1 argument of type `ShadowDeltaUpdatedEvent`.
+                    The callback is not expected to return anything.
 
-        Returns two values immediately. The first is a `concurrent.futures.Future`
-        which will contain a result of `None` when the server has acknowledged
-        the subscription, or an exception if the subscription fails. The second
-        value is a topic which may be passed to `unsubscribe()` to stop
-        receiving messages. Note that messages may arrive before the
-        subscription is acknowledged.
+        Returns:
+            Two values immediately. The first is a `concurrent.futures.Future`
+            which will contain a result of `None` when the server has acknowledged
+            the subscription, or an exception if the subscription fails. The second
+            value is a topic which may be passed to `unsubscribe()` to stop
+            receiving messages. Note that messages may arrive before the
+            subscription is acknowledged.
         """
         if not request.thing_name:
             raise ValueError("request.thing_name is required")
@@ -500,19 +517,20 @@ class IotShadowClient(awsiot.MqttServiceClient):
         """
         API Docs: https://docs.aws.amazon.com/iot/latest/developerguide/device-shadow-mqtt.html#update-documents-pub-sub-topic
 
-        Parameters:
-        request - `ShadowUpdatedSubscriptionRequest` instance.
-        qos     - The Quality of Service guarantee of this message
-        callback - Callback to invoke each time the event is received.
-                The callback should take 1 argument of type `ShadowUpdatedEvent`.
-                The callback is not expected to return anything.
+        Args:
+        	request: `ShadowUpdatedSubscriptionRequest` instance.
+        	qos: The Quality of Service guarantee of this message
+        	callback: Callback to invoke each time the event is received.
+                    The callback should take 1 argument of type `ShadowUpdatedEvent`.
+                    The callback is not expected to return anything.
 
-        Returns two values immediately. The first is a `concurrent.futures.Future`
-        which will contain a result of `None` when the server has acknowledged
-        the subscription, or an exception if the subscription fails. The second
-        value is a topic which may be passed to `unsubscribe()` to stop
-        receiving messages. Note that messages may arrive before the
-        subscription is acknowledged.
+        Returns:
+            Two values immediately. The first is a `concurrent.futures.Future`
+            which will contain a result of `None` when the server has acknowledged
+            the subscription, or an exception if the subscription fails. The second
+            value is a topic which may be passed to `unsubscribe()` to stop
+            receiving messages. Note that messages may arrive before the
+            subscription is acknowledged.
         """
         if not request.thing_name:
             raise ValueError("request.thing_name is required")
@@ -531,19 +549,20 @@ class IotShadowClient(awsiot.MqttServiceClient):
         """
         API Docs: https://docs.aws.amazon.com/iot/latest/developerguide/device-shadow-mqtt.html#update-accepted-pub-sub-topic
 
-        Parameters:
-        request - `UpdateNamedShadowSubscriptionRequest` instance.
-        qos     - The Quality of Service guarantee of this message
-        callback - Callback to invoke each time the event is received.
-                The callback should take 1 argument of type `UpdateShadowResponse`.
-                The callback is not expected to return anything.
+        Args:
+        	request: `UpdateNamedShadowSubscriptionRequest` instance.
+        	qos: The Quality of Service guarantee of this message
+        	callback: Callback to invoke each time the event is received.
+                    The callback should take 1 argument of type `UpdateShadowResponse`.
+                    The callback is not expected to return anything.
 
-        Returns two values immediately. The first is a `concurrent.futures.Future`
-        which will contain a result of `None` when the server has acknowledged
-        the subscription, or an exception if the subscription fails. The second
-        value is a topic which may be passed to `unsubscribe()` to stop
-        receiving messages. Note that messages may arrive before the
-        subscription is acknowledged.
+        Returns:
+            Two values immediately. The first is a `concurrent.futures.Future`
+            which will contain a result of `None` when the server has acknowledged
+            the subscription, or an exception if the subscription fails. The second
+            value is a topic which may be passed to `unsubscribe()` to stop
+            receiving messages. Note that messages may arrive before the
+            subscription is acknowledged.
         """
         if not request.thing_name:
             raise ValueError("request.thing_name is required")
@@ -564,19 +583,20 @@ class IotShadowClient(awsiot.MqttServiceClient):
         """
         API Docs: https://docs.aws.amazon.com/iot/latest/developerguide/device-shadow-mqtt.html#update-rejected-pub-sub-topic
 
-        Parameters:
-        request - `UpdateNamedShadowSubscriptionRequest` instance.
-        qos     - The Quality of Service guarantee of this message
-        callback - Callback to invoke each time the event is received.
-                The callback should take 1 argument of type `ErrorResponse`.
-                The callback is not expected to return anything.
+        Args:
+        	request: `UpdateNamedShadowSubscriptionRequest` instance.
+        	qos: The Quality of Service guarantee of this message
+        	callback: Callback to invoke each time the event is received.
+                    The callback should take 1 argument of type `ErrorResponse`.
+                    The callback is not expected to return anything.
 
-        Returns two values immediately. The first is a `concurrent.futures.Future`
-        which will contain a result of `None` when the server has acknowledged
-        the subscription, or an exception if the subscription fails. The second
-        value is a topic which may be passed to `unsubscribe()` to stop
-        receiving messages. Note that messages may arrive before the
-        subscription is acknowledged.
+        Returns:
+            Two values immediately. The first is a `concurrent.futures.Future`
+            which will contain a result of `None` when the server has acknowledged
+            the subscription, or an exception if the subscription fails. The second
+            value is a topic which may be passed to `unsubscribe()` to stop
+            receiving messages. Note that messages may arrive before the
+            subscription is acknowledged.
         """
         if not request.thing_name:
             raise ValueError("request.thing_name is required")
@@ -597,19 +617,20 @@ class IotShadowClient(awsiot.MqttServiceClient):
         """
         API Docs: https://docs.aws.amazon.com/iot/latest/developerguide/device-shadow-mqtt.html#update-accepted-pub-sub-topic
 
-        Parameters:
-        request - `UpdateShadowSubscriptionRequest` instance.
-        qos     - The Quality of Service guarantee of this message
-        callback - Callback to invoke each time the event is received.
-                The callback should take 1 argument of type `UpdateShadowResponse`.
-                The callback is not expected to return anything.
+        Args:
+        	request: `UpdateShadowSubscriptionRequest` instance.
+        	qos: The Quality of Service guarantee of this message
+        	callback: Callback to invoke each time the event is received.
+                    The callback should take 1 argument of type `UpdateShadowResponse`.
+                    The callback is not expected to return anything.
 
-        Returns two values immediately. The first is a `concurrent.futures.Future`
-        which will contain a result of `None` when the server has acknowledged
-        the subscription, or an exception if the subscription fails. The second
-        value is a topic which may be passed to `unsubscribe()` to stop
-        receiving messages. Note that messages may arrive before the
-        subscription is acknowledged.
+        Returns:
+            Two values immediately. The first is a `concurrent.futures.Future`
+            which will contain a result of `None` when the server has acknowledged
+            the subscription, or an exception if the subscription fails. The second
+            value is a topic which may be passed to `unsubscribe()` to stop
+            receiving messages. Note that messages may arrive before the
+            subscription is acknowledged.
         """
         if not request.thing_name:
             raise ValueError("request.thing_name is required")
@@ -628,19 +649,20 @@ class IotShadowClient(awsiot.MqttServiceClient):
         """
         API Docs: https://docs.aws.amazon.com/iot/latest/developerguide/device-shadow-mqtt.html#update-rejected-pub-sub-topic
 
-        Parameters:
-        request - `UpdateShadowSubscriptionRequest` instance.
-        qos     - The Quality of Service guarantee of this message
-        callback - Callback to invoke each time the event is received.
-                The callback should take 1 argument of type `ErrorResponse`.
-                The callback is not expected to return anything.
+        Args:
+        	request: `UpdateShadowSubscriptionRequest` instance.
+        	qos: The Quality of Service guarantee of this message
+        	callback: Callback to invoke each time the event is received.
+                    The callback should take 1 argument of type `ErrorResponse`.
+                    The callback is not expected to return anything.
 
-        Returns two values immediately. The first is a `concurrent.futures.Future`
-        which will contain a result of `None` when the server has acknowledged
-        the subscription, or an exception if the subscription fails. The second
-        value is a topic which may be passed to `unsubscribe()` to stop
-        receiving messages. Note that messages may arrive before the
-        subscription is acknowledged.
+        Returns:
+            Two values immediately. The first is a `concurrent.futures.Future`
+            which will contain a result of `None` when the server has acknowledged
+            the subscription, or an exception if the subscription fails. The second
+            value is a topic which may be passed to `unsubscribe()` to stop
+            receiving messages. Note that messages may arrive before the
+            subscription is acknowledged.
         """
         if not request.thing_name:
             raise ValueError("request.thing_name is required")
@@ -657,9 +679,9 @@ class IotShadowClient(awsiot.MqttServiceClient):
 class DeleteNamedShadowRequest(awsiot.ModeledClass):
     r"""
     Attributes:
-        * *client_token* (``str``)
-        * *shadow_name* (``str``)
-        * *thing_name* (``str``)
+        client_token (``str``):
+        shadow_name (``str``):
+        thing_name (``str``):
 
     All attributes are None by default, and may be set by keyword in the constructor.
     """
@@ -669,13 +691,10 @@ class DeleteNamedShadowRequest(awsiot.ModeledClass):
     def __init__(self, *args, **kwargs):
         r"""Initializes a DeleteNamedShadowRequest instance
 
-        :param \**kwargs:
-            See below
-
-        :Keyword Arguments:
-            * *client_token* (``str``)
-            * *shadow_name* (``str``)
-            * *thing_name* (``str``)
+        Args:
+            client_token (``str``):
+            shadow_name (``str``):
+            thing_name (``str``):
         """
 
         self.client_token = kwargs.get('client_token')
@@ -696,8 +715,8 @@ class DeleteNamedShadowRequest(awsiot.ModeledClass):
 class DeleteNamedShadowSubscriptionRequest(awsiot.ModeledClass):
     r"""
     Attributes:
-        * *shadow_name* (``str``)
-        * *thing_name* (``str``)
+        shadow_name (``str``):
+        thing_name (``str``):
 
     All attributes are None by default, and may be set by keyword in the constructor.
     """
@@ -707,12 +726,9 @@ class DeleteNamedShadowSubscriptionRequest(awsiot.ModeledClass):
     def __init__(self, *args, **kwargs):
         r"""Initializes a DeleteNamedShadowSubscriptionRequest instance
 
-        :param \**kwargs:
-            See below
-
-        :Keyword Arguments:
-            * *shadow_name* (``str``)
-            * *thing_name* (``str``)
+        Args:
+            shadow_name (``str``):
+            thing_name (``str``):
         """
 
         self.shadow_name = kwargs.get('shadow_name')
@@ -725,8 +741,8 @@ class DeleteNamedShadowSubscriptionRequest(awsiot.ModeledClass):
 class DeleteShadowRequest(awsiot.ModeledClass):
     r"""
     Attributes:
-        * *client_token* (``str``)
-        * *thing_name* (``str``)
+        client_token (``str``):
+        thing_name (``str``):
 
     All attributes are None by default, and may be set by keyword in the constructor.
     """
@@ -736,12 +752,9 @@ class DeleteShadowRequest(awsiot.ModeledClass):
     def __init__(self, *args, **kwargs):
         r"""Initializes a DeleteShadowRequest instance
 
-        :param \**kwargs:
-            See below
-
-        :Keyword Arguments:
-            * *client_token* (``str``)
-            * *thing_name* (``str``)
+        Args:
+            client_token (``str``):
+            thing_name (``str``):
         """
 
         self.client_token = kwargs.get('client_token')
@@ -768,9 +781,9 @@ class DeleteShadowRequest(awsiot.ModeledClass):
 class DeleteShadowResponse(awsiot.ModeledClass):
     r"""
     Attributes:
-        * *client_token* (``str``)
-        * *timestamp* (``datetime.datetime``)
-        * *version* (``int``)
+        client_token (``str``):
+        timestamp (``datetime.datetime``):
+        version (``int``):
 
     All attributes are None by default, and may be set by keyword in the constructor.
     """
@@ -780,13 +793,10 @@ class DeleteShadowResponse(awsiot.ModeledClass):
     def __init__(self, *args, **kwargs):
         r"""Initializes a DeleteShadowResponse instance
 
-        :param \**kwargs:
-            See below
-
-        :Keyword Arguments:
-            * *client_token* (``str``)
-            * *timestamp* (``datetime.datetime``)
-            * *version* (``int``)
+        Args:
+            client_token (``str``):
+            timestamp (``datetime.datetime``):
+            version (``int``):
         """
 
         self.client_token = kwargs.get('client_token')
@@ -815,7 +825,7 @@ class DeleteShadowResponse(awsiot.ModeledClass):
 class DeleteShadowSubscriptionRequest(awsiot.ModeledClass):
     r"""
     Attributes:
-        * *thing_name* (``str``)
+        thing_name (``str``):
 
     All attributes are None by default, and may be set by keyword in the constructor.
     """
@@ -825,11 +835,8 @@ class DeleteShadowSubscriptionRequest(awsiot.ModeledClass):
     def __init__(self, *args, **kwargs):
         r"""Initializes a DeleteShadowSubscriptionRequest instance
 
-        :param \**kwargs:
-            See below
-
-        :Keyword Arguments:
-            * *thing_name* (``str``)
+        Args:
+            thing_name (``str``):
         """
 
         self.thing_name = kwargs.get('thing_name')
@@ -841,10 +848,10 @@ class DeleteShadowSubscriptionRequest(awsiot.ModeledClass):
 class ErrorResponse(awsiot.ModeledClass):
     r"""
     Attributes:
-        * *client_token* (``str``)
-        * *code* (``int``)
-        * *message* (``str``)
-        * *timestamp* (``datetime.datetime``)
+        client_token (``str``):
+        code (``int``):
+        message (``str``):
+        timestamp (``datetime.datetime``):
 
     All attributes are None by default, and may be set by keyword in the constructor.
     """
@@ -854,14 +861,11 @@ class ErrorResponse(awsiot.ModeledClass):
     def __init__(self, *args, **kwargs):
         r"""Initializes a ErrorResponse instance
 
-        :param \**kwargs:
-            See below
-
-        :Keyword Arguments:
-            * *client_token* (``str``)
-            * *code* (``int``)
-            * *message* (``str``)
-            * *timestamp* (``datetime.datetime``)
+        Args:
+            client_token (``str``):
+            code (``int``):
+            message (``str``):
+            timestamp (``datetime.datetime``):
         """
 
         self.client_token = kwargs.get('client_token')
@@ -894,9 +898,9 @@ class ErrorResponse(awsiot.ModeledClass):
 class GetNamedShadowRequest(awsiot.ModeledClass):
     r"""
     Attributes:
-        * *client_token* (``str``)
-        * *shadow_name* (``str``)
-        * *thing_name* (``str``)
+        client_token (``str``):
+        shadow_name (``str``):
+        thing_name (``str``):
 
     All attributes are None by default, and may be set by keyword in the constructor.
     """
@@ -906,13 +910,10 @@ class GetNamedShadowRequest(awsiot.ModeledClass):
     def __init__(self, *args, **kwargs):
         r"""Initializes a GetNamedShadowRequest instance
 
-        :param \**kwargs:
-            See below
-
-        :Keyword Arguments:
-            * *client_token* (``str``)
-            * *shadow_name* (``str``)
-            * *thing_name* (``str``)
+        Args:
+            client_token (``str``):
+            shadow_name (``str``):
+            thing_name (``str``):
         """
 
         self.client_token = kwargs.get('client_token')
@@ -933,8 +934,8 @@ class GetNamedShadowRequest(awsiot.ModeledClass):
 class GetNamedShadowSubscriptionRequest(awsiot.ModeledClass):
     r"""
     Attributes:
-        * *shadow_name* (``str``)
-        * *thing_name* (``str``)
+        shadow_name (``str``):
+        thing_name (``str``):
 
     All attributes are None by default, and may be set by keyword in the constructor.
     """
@@ -944,12 +945,9 @@ class GetNamedShadowSubscriptionRequest(awsiot.ModeledClass):
     def __init__(self, *args, **kwargs):
         r"""Initializes a GetNamedShadowSubscriptionRequest instance
 
-        :param \**kwargs:
-            See below
-
-        :Keyword Arguments:
-            * *shadow_name* (``str``)
-            * *thing_name* (``str``)
+        Args:
+            shadow_name (``str``):
+            thing_name (``str``):
         """
 
         self.shadow_name = kwargs.get('shadow_name')
@@ -962,8 +960,8 @@ class GetNamedShadowSubscriptionRequest(awsiot.ModeledClass):
 class GetShadowRequest(awsiot.ModeledClass):
     r"""
     Attributes:
-        * *client_token* (``str``)
-        * *thing_name* (``str``)
+        client_token (``str``):
+        thing_name (``str``):
 
     All attributes are None by default, and may be set by keyword in the constructor.
     """
@@ -973,12 +971,9 @@ class GetShadowRequest(awsiot.ModeledClass):
     def __init__(self, *args, **kwargs):
         r"""Initializes a GetShadowRequest instance
 
-        :param \**kwargs:
-            See below
-
-        :Keyword Arguments:
-            * *client_token* (``str``)
-            * *thing_name* (``str``)
+        Args:
+            client_token (``str``):
+            thing_name (``str``):
         """
 
         self.client_token = kwargs.get('client_token')
@@ -1005,11 +1000,11 @@ class GetShadowRequest(awsiot.ModeledClass):
 class GetShadowResponse(awsiot.ModeledClass):
     r"""
     Attributes:
-        * *client_token* (``str``)
-        * *metadata* (``ShadowMetadata``)
-        * *state* (``ShadowStateWithDelta``)
-        * *timestamp* (``datetime.datetime``)
-        * *version* (``int``)
+        client_token (``str``):
+        metadata (``ShadowMetadata``):
+        state (``ShadowStateWithDelta``):
+        timestamp (``datetime.datetime``):
+        version (``int``):
 
     All attributes are None by default, and may be set by keyword in the constructor.
     """
@@ -1019,15 +1014,12 @@ class GetShadowResponse(awsiot.ModeledClass):
     def __init__(self, *args, **kwargs):
         r"""Initializes a GetShadowResponse instance
 
-        :param \**kwargs:
-            See below
-
-        :Keyword Arguments:
-            * *client_token* (``str``)
-            * *metadata* (``ShadowMetadata``)
-            * *state* (``ShadowStateWithDelta``)
-            * *timestamp* (``datetime.datetime``)
-            * *version* (``int``)
+        Args:
+            client_token (``str``):
+            metadata (``ShadowMetadata``):
+            state (``ShadowStateWithDelta``):
+            timestamp (``datetime.datetime``):
+            version (``int``):
         """
 
         self.client_token = kwargs.get('client_token')
@@ -1064,7 +1056,7 @@ class GetShadowResponse(awsiot.ModeledClass):
 class GetShadowSubscriptionRequest(awsiot.ModeledClass):
     r"""
     Attributes:
-        * *thing_name* (``str``)
+        thing_name (``str``):
 
     All attributes are None by default, and may be set by keyword in the constructor.
     """
@@ -1074,11 +1066,8 @@ class GetShadowSubscriptionRequest(awsiot.ModeledClass):
     def __init__(self, *args, **kwargs):
         r"""Initializes a GetShadowSubscriptionRequest instance
 
-        :param \**kwargs:
-            See below
-
-        :Keyword Arguments:
-            * *thing_name* (``str``)
+        Args:
+            thing_name (``str``):
         """
 
         self.thing_name = kwargs.get('thing_name')
@@ -1090,8 +1079,8 @@ class GetShadowSubscriptionRequest(awsiot.ModeledClass):
 class NamedShadowDeltaUpdatedSubscriptionRequest(awsiot.ModeledClass):
     r"""
     Attributes:
-        * *shadow_name* (``str``)
-        * *thing_name* (``str``)
+        shadow_name (``str``):
+        thing_name (``str``):
 
     All attributes are None by default, and may be set by keyword in the constructor.
     """
@@ -1101,12 +1090,9 @@ class NamedShadowDeltaUpdatedSubscriptionRequest(awsiot.ModeledClass):
     def __init__(self, *args, **kwargs):
         r"""Initializes a NamedShadowDeltaUpdatedSubscriptionRequest instance
 
-        :param \**kwargs:
-            See below
-
-        :Keyword Arguments:
-            * *shadow_name* (``str``)
-            * *thing_name* (``str``)
+        Args:
+            shadow_name (``str``):
+            thing_name (``str``):
         """
 
         self.shadow_name = kwargs.get('shadow_name')
@@ -1119,8 +1105,8 @@ class NamedShadowDeltaUpdatedSubscriptionRequest(awsiot.ModeledClass):
 class NamedShadowUpdatedSubscriptionRequest(awsiot.ModeledClass):
     r"""
     Attributes:
-        * *shadow_name* (``str``)
-        * *thing_name* (``str``)
+        shadow_name (``str``):
+        thing_name (``str``):
 
     All attributes are None by default, and may be set by keyword in the constructor.
     """
@@ -1130,12 +1116,9 @@ class NamedShadowUpdatedSubscriptionRequest(awsiot.ModeledClass):
     def __init__(self, *args, **kwargs):
         r"""Initializes a NamedShadowUpdatedSubscriptionRequest instance
 
-        :param \**kwargs:
-            See below
-
-        :Keyword Arguments:
-            * *shadow_name* (``str``)
-            * *thing_name* (``str``)
+        Args:
+            shadow_name (``str``):
+            thing_name (``str``):
         """
 
         self.shadow_name = kwargs.get('shadow_name')
@@ -1148,10 +1131,10 @@ class NamedShadowUpdatedSubscriptionRequest(awsiot.ModeledClass):
 class ShadowDeltaUpdatedEvent(awsiot.ModeledClass):
     r"""
     Attributes:
-        * *metadata* (``typing.Dict[str, typing.Any]``)
-        * *state* (``typing.Dict[str, typing.Any]``)
-        * *timestamp* (``datetime.datetime``)
-        * *version* (``int``)
+        metadata (``typing.Dict[str, typing.Any]``):
+        state (``typing.Dict[str, typing.Any]``):
+        timestamp (``datetime.datetime``):
+        version (``int``):
 
     All attributes are None by default, and may be set by keyword in the constructor.
     """
@@ -1161,14 +1144,11 @@ class ShadowDeltaUpdatedEvent(awsiot.ModeledClass):
     def __init__(self, *args, **kwargs):
         r"""Initializes a ShadowDeltaUpdatedEvent instance
 
-        :param \**kwargs:
-            See below
-
-        :Keyword Arguments:
-            * *metadata* (``typing.Dict[str, typing.Any]``)
-            * *state* (``typing.Dict[str, typing.Any]``)
-            * *timestamp* (``datetime.datetime``)
-            * *version* (``int``)
+        Args:
+            metadata (``typing.Dict[str, typing.Any]``):
+            state (``typing.Dict[str, typing.Any]``):
+            timestamp (``datetime.datetime``):
+            version (``int``):
         """
 
         self.metadata = kwargs.get('metadata')
@@ -1201,7 +1181,7 @@ class ShadowDeltaUpdatedEvent(awsiot.ModeledClass):
 class ShadowDeltaUpdatedSubscriptionRequest(awsiot.ModeledClass):
     r"""
     Attributes:
-        * *thing_name* (``str``)
+        thing_name (``str``):
 
     All attributes are None by default, and may be set by keyword in the constructor.
     """
@@ -1211,11 +1191,8 @@ class ShadowDeltaUpdatedSubscriptionRequest(awsiot.ModeledClass):
     def __init__(self, *args, **kwargs):
         r"""Initializes a ShadowDeltaUpdatedSubscriptionRequest instance
 
-        :param \**kwargs:
-            See below
-
-        :Keyword Arguments:
-            * *thing_name* (``str``)
+        Args:
+            thing_name (``str``):
         """
 
         self.thing_name = kwargs.get('thing_name')
@@ -1227,8 +1204,8 @@ class ShadowDeltaUpdatedSubscriptionRequest(awsiot.ModeledClass):
 class ShadowMetadata(awsiot.ModeledClass):
     r"""
     Attributes:
-        * *desired* (``typing.Dict[str, typing.Any]``)
-        * *reported* (``typing.Dict[str, typing.Any]``)
+        desired (``typing.Dict[str, typing.Any]``):
+        reported (``typing.Dict[str, typing.Any]``):
 
     All attributes are None by default, and may be set by keyword in the constructor.
     """
@@ -1238,12 +1215,9 @@ class ShadowMetadata(awsiot.ModeledClass):
     def __init__(self, *args, **kwargs):
         r"""Initializes a ShadowMetadata instance
 
-        :param \**kwargs:
-            See below
-
-        :Keyword Arguments:
-            * *desired* (``typing.Dict[str, typing.Any]``)
-            * *reported* (``typing.Dict[str, typing.Any]``)
+        Args:
+            desired (``typing.Dict[str, typing.Any]``):
+            reported (``typing.Dict[str, typing.Any]``):
         """
 
         self.desired = kwargs.get('desired')
@@ -1268,8 +1242,8 @@ class ShadowMetadata(awsiot.ModeledClass):
 class ShadowState(awsiot.ModeledClass):
     r"""
     Attributes:
-        * *desired* (``typing.Dict[str, typing.Any]``)
-        * *reported* (``typing.Dict[str, typing.Any]``)
+        desired (``typing.Dict[str, typing.Any]``):
+        reported (``typing.Dict[str, typing.Any]``):
 
     All attributes are None by default, and may be set by keyword in the constructor.
     """
@@ -1279,12 +1253,9 @@ class ShadowState(awsiot.ModeledClass):
     def __init__(self, *args, **kwargs):
         r"""Initializes a ShadowState instance
 
-        :param \**kwargs:
-            See below
-
-        :Keyword Arguments:
-            * *desired* (``typing.Dict[str, typing.Any]``)
-            * *reported* (``typing.Dict[str, typing.Any]``)
+        Args:
+            desired (``typing.Dict[str, typing.Any]``):
+            reported (``typing.Dict[str, typing.Any]``):
         """
 
         self.desired = kwargs.get('desired')
@@ -1318,9 +1289,9 @@ class ShadowState(awsiot.ModeledClass):
 class ShadowStateWithDelta(awsiot.ModeledClass):
     r"""
     Attributes:
-        * *delta* (``typing.Dict[str, typing.Any]``)
-        * *desired* (``typing.Dict[str, typing.Any]``)
-        * *reported* (``typing.Dict[str, typing.Any]``)
+        delta (``typing.Dict[str, typing.Any]``):
+        desired (``typing.Dict[str, typing.Any]``):
+        reported (``typing.Dict[str, typing.Any]``):
 
     All attributes are None by default, and may be set by keyword in the constructor.
     """
@@ -1330,13 +1301,10 @@ class ShadowStateWithDelta(awsiot.ModeledClass):
     def __init__(self, *args, **kwargs):
         r"""Initializes a ShadowStateWithDelta instance
 
-        :param \**kwargs:
-            See below
-
-        :Keyword Arguments:
-            * *delta* (``typing.Dict[str, typing.Any]``)
-            * *desired* (``typing.Dict[str, typing.Any]``)
-            * *reported* (``typing.Dict[str, typing.Any]``)
+        Args:
+            delta (``typing.Dict[str, typing.Any]``):
+            desired (``typing.Dict[str, typing.Any]``):
+            reported (``typing.Dict[str, typing.Any]``):
         """
 
         self.delta = kwargs.get('delta')
@@ -1365,9 +1333,9 @@ class ShadowStateWithDelta(awsiot.ModeledClass):
 class ShadowUpdatedEvent(awsiot.ModeledClass):
     r"""
     Attributes:
-        * *current* (``ShadowUpdatedSnapshot``)
-        * *previous* (``ShadowUpdatedSnapshot``)
-        * *timestamp* (``datetime.datetime``)
+        current (``ShadowUpdatedSnapshot``):
+        previous (``ShadowUpdatedSnapshot``):
+        timestamp (``datetime.datetime``):
 
     All attributes are None by default, and may be set by keyword in the constructor.
     """
@@ -1377,13 +1345,10 @@ class ShadowUpdatedEvent(awsiot.ModeledClass):
     def __init__(self, *args, **kwargs):
         r"""Initializes a ShadowUpdatedEvent instance
 
-        :param \**kwargs:
-            See below
-
-        :Keyword Arguments:
-            * *current* (``ShadowUpdatedSnapshot``)
-            * *previous* (``ShadowUpdatedSnapshot``)
-            * *timestamp* (``datetime.datetime``)
+        Args:
+            current (``ShadowUpdatedSnapshot``):
+            previous (``ShadowUpdatedSnapshot``):
+            timestamp (``datetime.datetime``):
         """
 
         self.current = kwargs.get('current')
@@ -1412,9 +1377,9 @@ class ShadowUpdatedEvent(awsiot.ModeledClass):
 class ShadowUpdatedSnapshot(awsiot.ModeledClass):
     r"""
     Attributes:
-        * *metadata* (``ShadowMetadata``)
-        * *state* (``ShadowState``)
-        * *version* (``int``)
+        metadata (``ShadowMetadata``):
+        state (``ShadowState``):
+        version (``int``):
 
     All attributes are None by default, and may be set by keyword in the constructor.
     """
@@ -1424,13 +1389,10 @@ class ShadowUpdatedSnapshot(awsiot.ModeledClass):
     def __init__(self, *args, **kwargs):
         r"""Initializes a ShadowUpdatedSnapshot instance
 
-        :param \**kwargs:
-            See below
-
-        :Keyword Arguments:
-            * *metadata* (``ShadowMetadata``)
-            * *state* (``ShadowState``)
-            * *version* (``int``)
+        Args:
+            metadata (``ShadowMetadata``):
+            state (``ShadowState``):
+            version (``int``):
         """
 
         self.metadata = kwargs.get('metadata')
@@ -1459,7 +1421,7 @@ class ShadowUpdatedSnapshot(awsiot.ModeledClass):
 class ShadowUpdatedSubscriptionRequest(awsiot.ModeledClass):
     r"""
     Attributes:
-        * *thing_name* (``str``)
+        thing_name (``str``):
 
     All attributes are None by default, and may be set by keyword in the constructor.
     """
@@ -1469,11 +1431,8 @@ class ShadowUpdatedSubscriptionRequest(awsiot.ModeledClass):
     def __init__(self, *args, **kwargs):
         r"""Initializes a ShadowUpdatedSubscriptionRequest instance
 
-        :param \**kwargs:
-            See below
-
-        :Keyword Arguments:
-            * *thing_name* (``str``)
+        Args:
+            thing_name (``str``):
         """
 
         self.thing_name = kwargs.get('thing_name')
@@ -1485,11 +1444,11 @@ class ShadowUpdatedSubscriptionRequest(awsiot.ModeledClass):
 class UpdateNamedShadowRequest(awsiot.ModeledClass):
     r"""
     Attributes:
-        * *client_token* (``str``)
-        * *shadow_name* (``str``)
-        * *state* (``ShadowState``)
-        * *thing_name* (``str``)
-        * *version* (``int``)
+        client_token (``str``):
+        shadow_name (``str``):
+        state (``ShadowState``):
+        thing_name (``str``):
+        version (``int``):
 
     All attributes are None by default, and may be set by keyword in the constructor.
     """
@@ -1499,15 +1458,12 @@ class UpdateNamedShadowRequest(awsiot.ModeledClass):
     def __init__(self, *args, **kwargs):
         r"""Initializes a UpdateNamedShadowRequest instance
 
-        :param \**kwargs:
-            See below
-
-        :Keyword Arguments:
-            * *client_token* (``str``)
-            * *shadow_name* (``str``)
-            * *state* (``ShadowState``)
-            * *thing_name* (``str``)
-            * *version* (``int``)
+        Args:
+            client_token (``str``):
+            shadow_name (``str``):
+            state (``ShadowState``):
+            thing_name (``str``):
+            version (``int``):
         """
 
         self.client_token = kwargs.get('client_token')
@@ -1534,8 +1490,8 @@ class UpdateNamedShadowRequest(awsiot.ModeledClass):
 class UpdateNamedShadowSubscriptionRequest(awsiot.ModeledClass):
     r"""
     Attributes:
-        * *shadow_name* (``str``)
-        * *thing_name* (``str``)
+        shadow_name (``str``):
+        thing_name (``str``):
 
     All attributes are None by default, and may be set by keyword in the constructor.
     """
@@ -1545,12 +1501,9 @@ class UpdateNamedShadowSubscriptionRequest(awsiot.ModeledClass):
     def __init__(self, *args, **kwargs):
         r"""Initializes a UpdateNamedShadowSubscriptionRequest instance
 
-        :param \**kwargs:
-            See below
-
-        :Keyword Arguments:
-            * *shadow_name* (``str``)
-            * *thing_name* (``str``)
+        Args:
+            shadow_name (``str``):
+            thing_name (``str``):
         """
 
         self.shadow_name = kwargs.get('shadow_name')
@@ -1563,10 +1516,10 @@ class UpdateNamedShadowSubscriptionRequest(awsiot.ModeledClass):
 class UpdateShadowRequest(awsiot.ModeledClass):
     r"""
     Attributes:
-        * *client_token* (``str``)
-        * *state* (``ShadowState``)
-        * *thing_name* (``str``)
-        * *version* (``int``)
+        client_token (``str``):
+        state (``ShadowState``):
+        thing_name (``str``):
+        version (``int``):
 
     All attributes are None by default, and may be set by keyword in the constructor.
     """
@@ -1576,14 +1529,11 @@ class UpdateShadowRequest(awsiot.ModeledClass):
     def __init__(self, *args, **kwargs):
         r"""Initializes a UpdateShadowRequest instance
 
-        :param \**kwargs:
-            See below
-
-        :Keyword Arguments:
-            * *client_token* (``str``)
-            * *state* (``ShadowState``)
-            * *thing_name* (``str``)
-            * *version* (``int``)
+        Args:
+            client_token (``str``):
+            state (``ShadowState``):
+            thing_name (``str``):
+            version (``int``):
         """
 
         self.client_token = kwargs.get('client_token')
@@ -1609,11 +1559,11 @@ class UpdateShadowRequest(awsiot.ModeledClass):
 class UpdateShadowResponse(awsiot.ModeledClass):
     r"""
     Attributes:
-        * *client_token* (``str``)
-        * *metadata* (``ShadowMetadata``)
-        * *state* (``ShadowState``)
-        * *timestamp* (``datetime.datetime``)
-        * *version* (``int``)
+        client_token (``str``):
+        metadata (``ShadowMetadata``):
+        state (``ShadowState``):
+        timestamp (``datetime.datetime``):
+        version (``int``):
 
     All attributes are None by default, and may be set by keyword in the constructor.
     """
@@ -1623,15 +1573,12 @@ class UpdateShadowResponse(awsiot.ModeledClass):
     def __init__(self, *args, **kwargs):
         r"""Initializes a UpdateShadowResponse instance
 
-        :param \**kwargs:
-            See below
-
-        :Keyword Arguments:
-            * *client_token* (``str``)
-            * *metadata* (``ShadowMetadata``)
-            * *state* (``ShadowState``)
-            * *timestamp* (``datetime.datetime``)
-            * *version* (``int``)
+        Args:
+            client_token (``str``):
+            metadata (``ShadowMetadata``):
+            state (``ShadowState``):
+            timestamp (``datetime.datetime``):
+            version (``int``):
         """
 
         self.client_token = kwargs.get('client_token')
@@ -1668,7 +1615,7 @@ class UpdateShadowResponse(awsiot.ModeledClass):
 class UpdateShadowSubscriptionRequest(awsiot.ModeledClass):
     r"""
     Attributes:
-        * *thing_name* (``str``)
+        thing_name (``str``):
 
     All attributes are None by default, and may be set by keyword in the constructor.
     """
@@ -1678,11 +1625,8 @@ class UpdateShadowSubscriptionRequest(awsiot.ModeledClass):
     def __init__(self, *args, **kwargs):
         r"""Initializes a UpdateShadowSubscriptionRequest instance
 
-        :param \**kwargs:
-            See below
-
-        :Keyword Arguments:
-            * *thing_name* (``str``)
+        Args:
+            thing_name (``str``):
         """
 
         self.thing_name = kwargs.get('thing_name')

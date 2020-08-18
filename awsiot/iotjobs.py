@@ -15,13 +15,14 @@ class IotJobsClient(awsiot.MqttServiceClient):
         """
         API Docs: https://docs.aws.amazon.com/iot/latest/developerguide/jobs-api.html#mqtt-describejobexecution
 
-        Parameters:
-        request - `DescribeJobExecutionRequest` instance.
-        qos     - The Quality of Service guarantee of this message
+        Args:
+            request: `DescribeJobExecutionRequest` instance.
+            qos: The Quality of Service guarantee of this message
 
-        Returns a concurrent.futures.Future, whose result will be None if the
-        request is successfully published. The Future's result will be an
-        exception if the request cannot be published.
+        Returns:
+            A `concurrent.futures.Future`, whose result will be None if the
+            request is successfully published. The Future's result will be an
+            exception if the request cannot be published.
         """
         if not request.thing_name:
             raise ValueError("request.thing_name is required")
@@ -38,13 +39,14 @@ class IotJobsClient(awsiot.MqttServiceClient):
         """
         API Docs: https://docs.aws.amazon.com/iot/latest/developerguide/jobs-api.html#mqtt-getpendingjobexecutions
 
-        Parameters:
-        request - `GetPendingJobExecutionsRequest` instance.
-        qos     - The Quality of Service guarantee of this message
+        Args:
+            request: `GetPendingJobExecutionsRequest` instance.
+            qos: The Quality of Service guarantee of this message
 
-        Returns a concurrent.futures.Future, whose result will be None if the
-        request is successfully published. The Future's result will be an
-        exception if the request cannot be published.
+        Returns:
+            A `concurrent.futures.Future`, whose result will be None if the
+            request is successfully published. The Future's result will be an
+            exception if the request cannot be published.
         """
         if not request.thing_name:
             raise ValueError("request.thing_name is required")
@@ -59,13 +61,14 @@ class IotJobsClient(awsiot.MqttServiceClient):
         """
         API Docs: https://docs.aws.amazon.com/iot/latest/developerguide/jobs-api.html#mqtt-startnextpendingjobexecution
 
-        Parameters:
-        request - `StartNextPendingJobExecutionRequest` instance.
-        qos     - The Quality of Service guarantee of this message
+        Args:
+            request: `StartNextPendingJobExecutionRequest` instance.
+            qos: The Quality of Service guarantee of this message
 
-        Returns a concurrent.futures.Future, whose result will be None if the
-        request is successfully published. The Future's result will be an
-        exception if the request cannot be published.
+        Returns:
+            A `concurrent.futures.Future`, whose result will be None if the
+            request is successfully published. The Future's result will be an
+            exception if the request cannot be published.
         """
         if not request.thing_name:
             raise ValueError("request.thing_name is required")
@@ -80,13 +83,14 @@ class IotJobsClient(awsiot.MqttServiceClient):
         """
         API Docs: https://docs.aws.amazon.com/iot/latest/developerguide/jobs-api.html#mqtt-updatejobexecution
 
-        Parameters:
-        request - `UpdateJobExecutionRequest` instance.
-        qos     - The Quality of Service guarantee of this message
+        Args:
+            request: `UpdateJobExecutionRequest` instance.
+            qos: The Quality of Service guarantee of this message
 
-        Returns a concurrent.futures.Future, whose result will be None if the
-        request is successfully published. The Future's result will be an
-        exception if the request cannot be published.
+        Returns:
+            A `concurrent.futures.Future`, whose result will be None if the
+            request is successfully published. The Future's result will be an
+            exception if the request cannot be published.
         """
         if not request.thing_name:
             raise ValueError("request.thing_name is required")
@@ -103,19 +107,20 @@ class IotJobsClient(awsiot.MqttServiceClient):
         """
         API Docs: https://docs.aws.amazon.com/iot/latest/developerguide/jobs-api.html#mqtt-describejobexecution
 
-        Parameters:
-        request - `DescribeJobExecutionSubscriptionRequest` instance.
-        qos     - The Quality of Service guarantee of this message
-        callback - Callback to invoke each time the event is received.
-                The callback should take 1 argument of type `DescribeJobExecutionResponse`.
-                The callback is not expected to return anything.
+        Args:
+            request: `DescribeJobExecutionSubscriptionRequest` instance.
+            qos: The Quality of Service guarantee of this message
+            callback: Callback to invoke each time the event is received.
+                    The callback should take 1 argument of type `DescribeJobExecutionResponse`.
+                    The callback is not expected to return anything.
 
-        Returns two values immediately. The first is a `concurrent.futures.Future`
-        which will contain a result of `None` when the server has acknowledged
-        the subscription, or an exception if the subscription fails. The second
-        value is a topic which may be passed to `unsubscribe()` to stop
-        receiving messages. Note that messages may arrive before the
-        subscription is acknowledged.
+        Returns:
+            Two values immediately. The first is a `concurrent.futures.Future`
+            which will contain a result of `None` when the server has acknowledged
+            the subscription, or an exception if the subscription fails. The second
+            value is a topic which may be passed to `unsubscribe()` to stop
+            receiving messages. Note that messages may arrive before the
+            subscription is acknowledged.
         """
         if not request.thing_name:
             raise ValueError("request.thing_name is required")
@@ -136,19 +141,20 @@ class IotJobsClient(awsiot.MqttServiceClient):
         """
         API Docs: https://docs.aws.amazon.com/iot/latest/developerguide/jobs-api.html#mqtt-describejobexecution
 
-        Parameters:
-        request - `DescribeJobExecutionSubscriptionRequest` instance.
-        qos     - The Quality of Service guarantee of this message
-        callback - Callback to invoke each time the event is received.
-                The callback should take 1 argument of type `RejectedError`.
-                The callback is not expected to return anything.
+        Args:
+            request: `DescribeJobExecutionSubscriptionRequest` instance.
+            qos: The Quality of Service guarantee of this message
+            callback: Callback to invoke each time the event is received.
+                    The callback should take 1 argument of type `RejectedError`.
+                    The callback is not expected to return anything.
 
-        Returns two values immediately. The first is a `concurrent.futures.Future`
-        which will contain a result of `None` when the server has acknowledged
-        the subscription, or an exception if the subscription fails. The second
-        value is a topic which may be passed to `unsubscribe()` to stop
-        receiving messages. Note that messages may arrive before the
-        subscription is acknowledged.
+        Returns:
+            Two values immediately. The first is a `concurrent.futures.Future`
+            which will contain a result of `None` when the server has acknowledged
+            the subscription, or an exception if the subscription fails. The second
+            value is a topic which may be passed to `unsubscribe()` to stop
+            receiving messages. Note that messages may arrive before the
+            subscription is acknowledged.
         """
         if not request.thing_name:
             raise ValueError("request.thing_name is required")
@@ -169,19 +175,20 @@ class IotJobsClient(awsiot.MqttServiceClient):
         """
         API Docs: https://docs.aws.amazon.com/iot/latest/developerguide/jobs-api.html#mqtt-getpendingjobexecutions
 
-        Parameters:
-        request - `GetPendingJobExecutionsSubscriptionRequest` instance.
-        qos     - The Quality of Service guarantee of this message
-        callback - Callback to invoke each time the event is received.
-                The callback should take 1 argument of type `GetPendingJobExecutionsResponse`.
-                The callback is not expected to return anything.
+        Args:
+            request: `GetPendingJobExecutionsSubscriptionRequest` instance.
+            qos: The Quality of Service guarantee of this message
+            callback: Callback to invoke each time the event is received.
+                    The callback should take 1 argument of type `GetPendingJobExecutionsResponse`.
+                    The callback is not expected to return anything.
 
-        Returns two values immediately. The first is a `concurrent.futures.Future`
-        which will contain a result of `None` when the server has acknowledged
-        the subscription, or an exception if the subscription fails. The second
-        value is a topic which may be passed to `unsubscribe()` to stop
-        receiving messages. Note that messages may arrive before the
-        subscription is acknowledged.
+        Returns:
+            Two values immediately. The first is a `concurrent.futures.Future`
+            which will contain a result of `None` when the server has acknowledged
+            the subscription, or an exception if the subscription fails. The second
+            value is a topic which may be passed to `unsubscribe()` to stop
+            receiving messages. Note that messages may arrive before the
+            subscription is acknowledged.
         """
         if not request.thing_name:
             raise ValueError("request.thing_name is required")
@@ -200,19 +207,20 @@ class IotJobsClient(awsiot.MqttServiceClient):
         """
         API Docs: https://docs.aws.amazon.com/iot/latest/developerguide/jobs-api.html#mqtt-getpendingjobexecutions
 
-        Parameters:
-        request - `GetPendingJobExecutionsSubscriptionRequest` instance.
-        qos     - The Quality of Service guarantee of this message
-        callback - Callback to invoke each time the event is received.
-                The callback should take 1 argument of type `RejectedError`.
-                The callback is not expected to return anything.
+        Args:
+            request: `GetPendingJobExecutionsSubscriptionRequest` instance.
+            qos: The Quality of Service guarantee of this message
+            callback: Callback to invoke each time the event is received.
+                    The callback should take 1 argument of type `RejectedError`.
+                    The callback is not expected to return anything.
 
-        Returns two values immediately. The first is a `concurrent.futures.Future`
-        which will contain a result of `None` when the server has acknowledged
-        the subscription, or an exception if the subscription fails. The second
-        value is a topic which may be passed to `unsubscribe()` to stop
-        receiving messages. Note that messages may arrive before the
-        subscription is acknowledged.
+        Returns:
+            Two values immediately. The first is a `concurrent.futures.Future`
+            which will contain a result of `None` when the server has acknowledged
+            the subscription, or an exception if the subscription fails. The second
+            value is a topic which may be passed to `unsubscribe()` to stop
+            receiving messages. Note that messages may arrive before the
+            subscription is acknowledged.
         """
         if not request.thing_name:
             raise ValueError("request.thing_name is required")
@@ -231,19 +239,20 @@ class IotJobsClient(awsiot.MqttServiceClient):
         """
         API Docs: https://docs.aws.amazon.com/iot/latest/developerguide/jobs-api.html#mqtt-jobexecutionschanged
 
-        Parameters:
-        request - `JobExecutionsChangedSubscriptionRequest` instance.
-        qos     - The Quality of Service guarantee of this message
-        callback - Callback to invoke each time the event is received.
-                The callback should take 1 argument of type `JobExecutionsChangedEvent`.
-                The callback is not expected to return anything.
+        Args:
+            request: `JobExecutionsChangedSubscriptionRequest` instance.
+            qos: The Quality of Service guarantee of this message
+            callback: Callback to invoke each time the event is received.
+                    The callback should take 1 argument of type `JobExecutionsChangedEvent`.
+                    The callback is not expected to return anything.
 
-        Returns two values immediately. The first is a `concurrent.futures.Future`
-        which will contain a result of `None` when the server has acknowledged
-        the subscription, or an exception if the subscription fails. The second
-        value is a topic which may be passed to `unsubscribe()` to stop
-        receiving messages. Note that messages may arrive before the
-        subscription is acknowledged.
+        Returns:
+            Two values immediately. The first is a `concurrent.futures.Future`
+            which will contain a result of `None` when the server has acknowledged
+            the subscription, or an exception if the subscription fails. The second
+            value is a topic which may be passed to `unsubscribe()` to stop
+            receiving messages. Note that messages may arrive before the
+            subscription is acknowledged.
         """
         if not request.thing_name:
             raise ValueError("request.thing_name is required")
@@ -262,19 +271,20 @@ class IotJobsClient(awsiot.MqttServiceClient):
         """
         API Docs: https://docs.aws.amazon.com/iot/latest/developerguide/jobs-api.html#mqtt-nextjobexecutionchanged
 
-        Parameters:
-        request - `NextJobExecutionChangedSubscriptionRequest` instance.
-        qos     - The Quality of Service guarantee of this message
-        callback - Callback to invoke each time the event is received.
-                The callback should take 1 argument of type `NextJobExecutionChangedEvent`.
-                The callback is not expected to return anything.
+        Args:
+            request:`NextJobExecutionChangedSubscriptionRequest` instance.
+            qos: The Quality of Service guarantee of this message
+            callback: Callback to invoke each time the event is received.
+                    The callback should take 1 argument of type `NextJobExecutionChangedEvent`.
+                    The callback is not expected to return anything.
 
-        Returns two values immediately. The first is a `concurrent.futures.Future`
-        which will contain a result of `None` when the server has acknowledged
-        the subscription, or an exception if the subscription fails. The second
-        value is a topic which may be passed to `unsubscribe()` to stop
-        receiving messages. Note that messages may arrive before the
-        subscription is acknowledged.
+        Returns:
+            Two values immediately. The first is a `concurrent.futures.Future`
+            which will contain a result of `None` when the server has acknowledged
+            the subscription, or an exception if the subscription fails. The second
+            value is a topic which may be passed to `unsubscribe()` to stop
+            receiving messages. Note that messages may arrive before the
+            subscription is acknowledged.
         """
         if not request.thing_name:
             raise ValueError("request.thing_name is required")
@@ -293,19 +303,20 @@ class IotJobsClient(awsiot.MqttServiceClient):
         """
         API Docs: https://docs.aws.amazon.com/iot/latest/developerguide/jobs-api.html#mqtt-startnextpendingjobexecution
 
-        Parameters:
-        request - `StartNextPendingJobExecutionSubscriptionRequest` instance.
-        qos     - The Quality of Service guarantee of this message
-        callback - Callback to invoke each time the event is received.
-                The callback should take 1 argument of type `StartNextJobExecutionResponse`.
-                The callback is not expected to return anything.
+        Args:
+            request: `StartNextPendingJobExecutionSubscriptionRequest` instance.
+            qos: The Quality of Service guarantee of this message
+            callback: Callback to invoke each time the event is received.
+                    The callback should take 1 argument of type `StartNextJobExecutionResponse`.
+                    The callback is not expected to return anything.
 
-        Returns two values immediately. The first is a `concurrent.futures.Future`
-        which will contain a result of `None` when the server has acknowledged
-        the subscription, or an exception if the subscription fails. The second
-        value is a topic which may be passed to `unsubscribe()` to stop
-        receiving messages. Note that messages may arrive before the
-        subscription is acknowledged.
+        Returns:
+            Two values immediately. The first is a `concurrent.futures.Future`
+            which will contain a result of `None` when the server has acknowledged
+            the subscription, or an exception if the subscription fails. The second
+            value is a topic which may be passed to `unsubscribe()` to stop
+            receiving messages. Note that messages may arrive before the
+            subscription is acknowledged.
         """
         if not request.thing_name:
             raise ValueError("request.thing_name is required")
@@ -324,19 +335,20 @@ class IotJobsClient(awsiot.MqttServiceClient):
         """
         API Docs: https://docs.aws.amazon.com/iot/latest/developerguide/jobs-api.html#mqtt-startnextpendingjobexecution
 
-        Parameters:
-        request - `StartNextPendingJobExecutionSubscriptionRequest` instance.
-        qos     - The Quality of Service guarantee of this message
-        callback - Callback to invoke each time the event is received.
-                The callback should take 1 argument of type `RejectedError`.
-                The callback is not expected to return anything.
+        Args:
+            request: `StartNextPendingJobExecutionSubscriptionRequest` instance.
+            qos: The Quality of Service guarantee of this message
+            callback: Callback to invoke each time the event is received.
+                    The callback should take 1 argument of type `RejectedError`.
+                    The callback is not expected to return anything.
 
-        Returns two values immediately. The first is a `concurrent.futures.Future`
-        which will contain a result of `None` when the server has acknowledged
-        the subscription, or an exception if the subscription fails. The second
-        value is a topic which may be passed to `unsubscribe()` to stop
-        receiving messages. Note that messages may arrive before the
-        subscription is acknowledged.
+        Returns:
+            Two values immediately. The first is a `concurrent.futures.Future`
+            which will contain a result of `None` when the server has acknowledged
+            the subscription, or an exception if the subscription fails. The second
+            value is a topic which may be passed to `unsubscribe()` to stop
+            receiving messages. Note that messages may arrive before the
+            subscription is acknowledged.
         """
         if not request.thing_name:
             raise ValueError("request.thing_name is required")
@@ -355,19 +367,20 @@ class IotJobsClient(awsiot.MqttServiceClient):
         """
         API Docs: https://docs.aws.amazon.com/iot/latest/developerguide/jobs-api.html#mqtt-updatejobexecution
 
-        Parameters:
-        request - `UpdateJobExecutionSubscriptionRequest` instance.
-        qos     - The Quality of Service guarantee of this message
-        callback - Callback to invoke each time the event is received.
-                The callback should take 1 argument of type `UpdateJobExecutionResponse`.
-                The callback is not expected to return anything.
+        Args:
+            request: `UpdateJobExecutionSubscriptionRequest` instance.
+            qos: The Quality of Service guarantee of this message
+            callback: Callback to invoke each time the event is received.
+                    The callback should take 1 argument of type `UpdateJobExecutionResponse`.
+                    The callback is not expected to return anything.
 
-        Returns two values immediately. The first is a `concurrent.futures.Future`
-        which will contain a result of `None` when the server has acknowledged
-        the subscription, or an exception if the subscription fails. The second
-        value is a topic which may be passed to `unsubscribe()` to stop
-        receiving messages. Note that messages may arrive before the
-        subscription is acknowledged.
+        Returns:
+            Two values immediately. The first is a `concurrent.futures.Future`
+            which will contain a result of `None` when the server has acknowledged
+            the subscription, or an exception if the subscription fails. The second
+            value is a topic which may be passed to `unsubscribe()` to stop
+            receiving messages. Note that messages may arrive before the
+            subscription is acknowledged.
         """
         if not request.job_id:
             raise ValueError("request.job_id is required")
@@ -388,19 +401,20 @@ class IotJobsClient(awsiot.MqttServiceClient):
         """
         API Docs: https://docs.aws.amazon.com/iot/latest/developerguide/jobs-api.html#mqtt-updatejobexecution
 
-        Parameters:
-        request - `UpdateJobExecutionSubscriptionRequest` instance.
-        qos     - The Quality of Service guarantee of this message
-        callback - Callback to invoke each time the event is received.
-                The callback should take 1 argument of type `RejectedError`.
-                The callback is not expected to return anything.
+        Args:
+            request: `UpdateJobExecutionSubscriptionRequest` instance.
+            qos: The Quality of Service guarantee of this message
+            callback: Callback to invoke each time the event is received.
+                    The callback should take 1 argument of type `RejectedError`.
+                    The callback is not expected to return anything.
 
-        Returns two values immediately. The first is a `concurrent.futures.Future`
-        which will contain a result of `None` when the server has acknowledged
-        the subscription, or an exception if the subscription fails. The second
-        value is a topic which may be passed to `unsubscribe()` to stop
-        receiving messages. Note that messages may arrive before the
-        subscription is acknowledged.
+        Returns:
+            Two values immediately. The first is a `concurrent.futures.Future`
+            which will contain a result of `None` when the server has acknowledged
+            the subscription, or an exception if the subscription fails. The second
+            value is a topic which may be passed to `unsubscribe()` to stop
+            receiving messages. Note that messages may arrive before the
+            subscription is acknowledged.
         """
         if not request.job_id:
             raise ValueError("request.job_id is required")
@@ -419,11 +433,11 @@ class IotJobsClient(awsiot.MqttServiceClient):
 class DescribeJobExecutionRequest(awsiot.ModeledClass):
     r"""
     Attributes:
-        * *client_token* (``str``)
-        * *execution_number* (``int``)
-        * *include_job_document* (``bool``)
-        * *job_id* (``str``)
-        * *thing_name* (``str``)
+        client_token (``str``):
+        execution_number (``int``):
+        include_job_document (``bool``):
+        job_id (``str``):
+        thing_name (``str``):
 
     All attributes are None by default, and may be set by keyword in the constructor.
     """
@@ -433,15 +447,12 @@ class DescribeJobExecutionRequest(awsiot.ModeledClass):
     def __init__(self, *args, **kwargs):
         r"""Initializes a DescribeJobExecutionRequest instance
 
-        :param \**kwargs:
-            See below
-
-        :Keyword Arguments:
-            * *client_token* (``str``)
-            * *execution_number* (``int``)
-            * *include_job_document* (``bool``)
-            * *job_id* (``str``)
-            * *thing_name* (``str``)
+        Args:
+            client_token* (``str``)
+            execution_number* (``int``)
+            include_job_document* (``bool``)
+            job_id* (``str``)
+            thing_name* (``str``)
         """
 
         self.client_token = kwargs.get('client_token')
@@ -468,9 +479,9 @@ class DescribeJobExecutionRequest(awsiot.ModeledClass):
 class DescribeJobExecutionResponse(awsiot.ModeledClass):
     r"""
     Attributes:
-        * *client_token* (``str``)
-        * *execution* (``JobExecutionData``)
-        * *timestamp* (``datetime.datetime``)
+        client_token (``str``):
+        execution (``JobExecutionData``):
+        timestamp (``datetime.datetime``):
 
     All attributes are None by default, and may be set by keyword in the constructor.
     """
@@ -480,13 +491,10 @@ class DescribeJobExecutionResponse(awsiot.ModeledClass):
     def __init__(self, *args, **kwargs):
         r"""Initializes a DescribeJobExecutionResponse instance
 
-        :param \**kwargs:
-            See below
-
-        :Keyword Arguments:
-            * *client_token* (``str``)
-            * *execution* (``JobExecutionData``)
-            * *timestamp* (``datetime.datetime``)
+        Args:
+            client_token (``str``):
+            execution (``JobExecutionData``):
+            timestamp (``datetime.datetime``):
         """
 
         self.client_token = kwargs.get('client_token')
@@ -515,8 +523,8 @@ class DescribeJobExecutionResponse(awsiot.ModeledClass):
 class DescribeJobExecutionSubscriptionRequest(awsiot.ModeledClass):
     r"""
     Attributes:
-        * *job_id* (``str``)
-        * *thing_name* (``str``)
+        job_id (``str``):
+        thing_name (``str``):
 
     All attributes are None by default, and may be set by keyword in the constructor.
     """
@@ -526,12 +534,9 @@ class DescribeJobExecutionSubscriptionRequest(awsiot.ModeledClass):
     def __init__(self, *args, **kwargs):
         r"""Initializes a DescribeJobExecutionSubscriptionRequest instance
 
-        :param \**kwargs:
-            See below
-
-        :Keyword Arguments:
-            * *job_id* (``str``)
-            * *thing_name* (``str``)
+        Args:
+            job_id (``str``):
+            thing_name (``str``):
         """
 
         self.job_id = kwargs.get('job_id')
@@ -544,8 +549,8 @@ class DescribeJobExecutionSubscriptionRequest(awsiot.ModeledClass):
 class GetPendingJobExecutionsRequest(awsiot.ModeledClass):
     r"""
     Attributes:
-        * *client_token* (``str``)
-        * *thing_name* (``str``)
+        client_token (``str``):
+        thing_name (``str``):
 
     All attributes are None by default, and may be set by keyword in the constructor.
     """
@@ -555,12 +560,9 @@ class GetPendingJobExecutionsRequest(awsiot.ModeledClass):
     def __init__(self, *args, **kwargs):
         r"""Initializes a GetPendingJobExecutionsRequest instance
 
-        :param \**kwargs:
-            See below
-
-        :Keyword Arguments:
-            * *client_token* (``str``)
-            * *thing_name* (``str``)
+        Args:
+            client_token (``str``):
+            thing_name (``str``):
         """
 
         self.client_token = kwargs.get('client_token')
@@ -580,10 +582,10 @@ class GetPendingJobExecutionsRequest(awsiot.ModeledClass):
 class GetPendingJobExecutionsResponse(awsiot.ModeledClass):
     r"""
     Attributes:
-        * *client_token* (``str``)
-        * *in_progress_jobs* (``typing.List[JobExecutionSummary]``)
-        * *queued_jobs* (``typing.List[JobExecutionSummary]``)
-        * *timestamp* (``datetime.datetime``)
+        client_token (``str``):
+        in_progress_jobs (``typing.List[JobExecutionSummary]``):
+        queued_jobs (``typing.List[JobExecutionSummary]``):
+        timestamp (``datetime.datetime``):
 
     All attributes are None by default, and may be set by keyword in the constructor.
     """
@@ -593,14 +595,11 @@ class GetPendingJobExecutionsResponse(awsiot.ModeledClass):
     def __init__(self, *args, **kwargs):
         r"""Initializes a GetPendingJobExecutionsResponse instance
 
-        :param \**kwargs:
-            See below
-
-        :Keyword Arguments:
-            * *client_token* (``str``)
-            * *in_progress_jobs* (``typing.List[JobExecutionSummary]``)
-            * *queued_jobs* (``typing.List[JobExecutionSummary]``)
-            * *timestamp* (``datetime.datetime``)
+        Args:
+            client_token (``str``):
+            in_progress_jobs (``typing.List[JobExecutionSummary]``):
+            queued_jobs (``typing.List[JobExecutionSummary]``):
+            timestamp (``datetime.datetime``):
         """
 
         self.client_token = kwargs.get('client_token')
@@ -633,7 +632,7 @@ class GetPendingJobExecutionsResponse(awsiot.ModeledClass):
 class GetPendingJobExecutionsSubscriptionRequest(awsiot.ModeledClass):
     r"""
     Attributes:
-        * *thing_name* (``str``)
+        thing_name (``str``):
 
     All attributes are None by default, and may be set by keyword in the constructor.
     """
@@ -643,11 +642,8 @@ class GetPendingJobExecutionsSubscriptionRequest(awsiot.ModeledClass):
     def __init__(self, *args, **kwargs):
         r"""Initializes a GetPendingJobExecutionsSubscriptionRequest instance
 
-        :param \**kwargs:
-            See below
-
-        :Keyword Arguments:
-            * *thing_name* (``str``)
+        Args:
+            thing_name (``str``):
         """
 
         self.thing_name = kwargs.get('thing_name')
@@ -659,16 +655,16 @@ class GetPendingJobExecutionsSubscriptionRequest(awsiot.ModeledClass):
 class JobExecutionData(awsiot.ModeledClass):
     r"""
     Attributes:
-        * *execution_number* (``int``)
-        * *job_document* (``typing.Dict[str, typing.Any]``)
-        * *job_id* (``str``)
-        * *last_updated_at* (``datetime.datetime``)
-        * *queued_at* (``datetime.datetime``)
-        * *started_at* (``datetime.datetime``)
-        * *status* (``str``)
-        * *status_details* (``typing.Dict[str, str]``)
-        * *thing_name* (``str``)
-        * *version_number* (``int``)
+        execution_number (``int``):
+        job_document (``typing.Dict[str, typing.Any]``):
+        job_id (``str``):
+        last_updated_at (``datetime.datetime``):
+        queued_at (``datetime.datetime``):
+        started_at (``datetime.datetime``):
+        status (``str``):
+        status_details (``typing.Dict[str, str]``):
+        thing_name (``str``):
+        version_number (``int``):
 
     All attributes are None by default, and may be set by keyword in the constructor.
     """
@@ -678,20 +674,17 @@ class JobExecutionData(awsiot.ModeledClass):
     def __init__(self, *args, **kwargs):
         r"""Initializes a JobExecutionData instance
 
-        :param \**kwargs:
-            See below
-
-        :Keyword Arguments:
-            * *execution_number* (``int``)
-            * *job_document* (``typing.Dict[str, typing.Any]``)
-            * *job_id* (``str``)
-            * *last_updated_at* (``datetime.datetime``)
-            * *queued_at* (``datetime.datetime``)
-            * *started_at* (``datetime.datetime``)
-            * *status* (``str``)
-            * *status_details* (``typing.Dict[str, str]``)
-            * *thing_name* (``str``)
-            * *version_number* (``int``)
+        Args:
+            execution_number (``int``)
+            job_document (``typing.Dict[str, typing.Any]``)
+            job_id (``str``)
+            last_updated_at (``datetime.datetime``)
+            queued_at (``datetime.datetime``)
+            started_at (``datetime.datetime``)
+            status (``str``)
+            status_details (``typing.Dict[str, str]``)
+            thing_name (``str``)
+            version_number (``int``)
         """
 
         self.execution_number = kwargs.get('execution_number')
@@ -748,9 +741,9 @@ class JobExecutionData(awsiot.ModeledClass):
 class JobExecutionState(awsiot.ModeledClass):
     r"""
     Attributes:
-        * *status* (``str``)
-        * *status_details* (``typing.Dict[str, str]``)
-        * *version_number* (``int``)
+        status (``str``):
+        status_details (``typing.Dict[str, str]``):
+        version_number (``int``):
 
     All attributes are None by default, and may be set by keyword in the constructor.
     """
@@ -760,13 +753,10 @@ class JobExecutionState(awsiot.ModeledClass):
     def __init__(self, *args, **kwargs):
         r"""Initializes a JobExecutionState instance
 
-        :param \**kwargs:
-            See below
-
-        :Keyword Arguments:
-            * *status* (``str``)
-            * *status_details* (``typing.Dict[str, str]``)
-            * *version_number* (``int``)
+        Args:
+            status (``str``):
+            status_details (``typing.Dict[str, str]``):
+            version_number (``int``):
         """
 
         self.status = kwargs.get('status')
@@ -795,12 +785,12 @@ class JobExecutionState(awsiot.ModeledClass):
 class JobExecutionSummary(awsiot.ModeledClass):
     r"""
     Attributes:
-        * *execution_number* (``int``)
-        * *job_id* (``str``)
-        * *last_updated_at* (``datetime.datetime``)
-        * *queued_at* (``datetime.datetime``)
-        * *started_at* (``datetime.datetime``)
-        * *version_number* (``int``)
+        execution_number (``int``):
+        job_id (``str``):
+        last_updated_at (``datetime.datetime``):
+        queued_at (``datetime.datetime``):
+        started_at (``datetime.datetime``):
+        version_number (``int``):
 
     All attributes are None by default, and may be set by keyword in the constructor.
     """
@@ -810,16 +800,13 @@ class JobExecutionSummary(awsiot.ModeledClass):
     def __init__(self, *args, **kwargs):
         r"""Initializes a JobExecutionSummary instance
 
-        :param \**kwargs:
-            See below
-
-        :Keyword Arguments:
-            * *execution_number* (``int``)
-            * *job_id* (``str``)
-            * *last_updated_at* (``datetime.datetime``)
-            * *queued_at* (``datetime.datetime``)
-            * *started_at* (``datetime.datetime``)
-            * *version_number* (``int``)
+        Args:
+            execution_number (``int``):
+            job_id (``str``):
+            last_updated_at (``datetime.datetime``):
+            queued_at (``datetime.datetime``):
+            started_at (``datetime.datetime``):
+            version_number (``int``):
         """
 
         self.execution_number = kwargs.get('execution_number')
@@ -860,8 +847,8 @@ class JobExecutionSummary(awsiot.ModeledClass):
 class JobExecutionsChangedEvent(awsiot.ModeledClass):
     r"""
     Attributes:
-        * *jobs* (``typing.Dict[str, typing.List[JobExecutionSummary]]``)
-        * *timestamp* (``datetime.datetime``)
+        jobs (``typing.Dict[str, typing.List[JobExecutionSummary]]``):
+        timestamp (``datetime.datetime``):
 
     All attributes are None by default, and may be set by keyword in the constructor.
     """
@@ -871,12 +858,9 @@ class JobExecutionsChangedEvent(awsiot.ModeledClass):
     def __init__(self, *args, **kwargs):
         r"""Initializes a JobExecutionsChangedEvent instance
 
-        :param \**kwargs:
-            See below
-
-        :Keyword Arguments:
-            * *jobs* (``typing.Dict[str, typing.List[JobExecutionSummary]]``)
-            * *timestamp* (``datetime.datetime``)
+        Args:
+            jobs (``typing.Dict[str, typing.List[JobExecutionSummary]]``):
+            timestamp (``datetime.datetime``):
         """
 
         self.jobs = kwargs.get('jobs')
@@ -901,7 +885,7 @@ class JobExecutionsChangedEvent(awsiot.ModeledClass):
 class JobExecutionsChangedSubscriptionRequest(awsiot.ModeledClass):
     r"""
     Attributes:
-        * *thing_name* (``str``)
+        thing_name (``str``):
 
     All attributes are None by default, and may be set by keyword in the constructor.
     """
@@ -911,11 +895,8 @@ class JobExecutionsChangedSubscriptionRequest(awsiot.ModeledClass):
     def __init__(self, *args, **kwargs):
         r"""Initializes a JobExecutionsChangedSubscriptionRequest instance
 
-        :param \**kwargs:
-            See below
-
-        :Keyword Arguments:
-            * *thing_name* (``str``)
+        Args:
+            thing_name (``str``):
         """
 
         self.thing_name = kwargs.get('thing_name')
@@ -937,8 +918,8 @@ class JobStatus:
 class NextJobExecutionChangedEvent(awsiot.ModeledClass):
     r"""
     Attributes:
-        * *execution* (``JobExecutionData``)
-        * *timestamp* (``datetime.datetime``)
+        execution (``JobExecutionData``):
+        timestamp (``datetime.datetime``):
 
     All attributes are None by default, and may be set by keyword in the constructor.
     """
@@ -948,12 +929,9 @@ class NextJobExecutionChangedEvent(awsiot.ModeledClass):
     def __init__(self, *args, **kwargs):
         r"""Initializes a NextJobExecutionChangedEvent instance
 
-        :param \**kwargs:
-            See below
-
-        :Keyword Arguments:
-            * *execution* (``JobExecutionData``)
-            * *timestamp* (``datetime.datetime``)
+        Args:
+            execution (``JobExecutionData``):
+            timestamp (``datetime.datetime``):
         """
 
         self.execution = kwargs.get('execution')
@@ -978,7 +956,7 @@ class NextJobExecutionChangedEvent(awsiot.ModeledClass):
 class NextJobExecutionChangedSubscriptionRequest(awsiot.ModeledClass):
     r"""
     Attributes:
-        * *thing_name* (``str``)
+        thing_name (``str``):
 
     All attributes are None by default, and may be set by keyword in the constructor.
     """
@@ -988,11 +966,8 @@ class NextJobExecutionChangedSubscriptionRequest(awsiot.ModeledClass):
     def __init__(self, *args, **kwargs):
         r"""Initializes a NextJobExecutionChangedSubscriptionRequest instance
 
-        :param \**kwargs:
-            See below
-
-        :Keyword Arguments:
-            * *thing_name* (``str``)
+        Args:
+            thing_name (``str``):
         """
 
         self.thing_name = kwargs.get('thing_name')
@@ -1004,11 +979,11 @@ class NextJobExecutionChangedSubscriptionRequest(awsiot.ModeledClass):
 class RejectedError(awsiot.ModeledClass):
     r"""
     Attributes:
-        * *client_token* (``str``)
-        * *code* (``str``)
-        * *execution_state* (``JobExecutionState``)
-        * *message* (``str``)
-        * *timestamp* (``datetime.datetime``)
+        client_token (``str``):
+        code (``str``):
+        execution_state (``JobExecutionState``):
+        message (``str``):
+        timestamp (``datetime.datetime``):
 
     All attributes are None by default, and may be set by keyword in the constructor.
     """
@@ -1018,15 +993,12 @@ class RejectedError(awsiot.ModeledClass):
     def __init__(self, *args, **kwargs):
         r"""Initializes a RejectedError instance
 
-        :param \**kwargs:
-            See below
-
-        :Keyword Arguments:
-            * *client_token* (``str``)
-            * *code* (``str``)
-            * *execution_state* (``JobExecutionState``)
-            * *message* (``str``)
-            * *timestamp* (``datetime.datetime``)
+        Args:
+            client_token (``str``):
+            code (``str``):
+            execution_state (``JobExecutionState``):
+            message (``str``):
+            timestamp (``datetime.datetime``):
         """
 
         self.client_token = kwargs.get('client_token')
@@ -1074,9 +1046,9 @@ class RejectedErrorCode:
 class StartNextJobExecutionResponse(awsiot.ModeledClass):
     r"""
     Attributes:
-        * *client_token* (``str``)
-        * *execution* (``JobExecutionData``)
-        * *timestamp* (``datetime.datetime``)
+        client_token (``str``):
+        execution (``JobExecutionData``):
+        timestamp (``datetime.datetime``):
 
     All attributes are None by default, and may be set by keyword in the constructor.
     """
@@ -1086,13 +1058,10 @@ class StartNextJobExecutionResponse(awsiot.ModeledClass):
     def __init__(self, *args, **kwargs):
         r"""Initializes a StartNextJobExecutionResponse instance
 
-        :param \**kwargs:
-            See below
-
-        :Keyword Arguments:
-            * *client_token* (``str``)
-            * *execution* (``JobExecutionData``)
-            * *timestamp* (``datetime.datetime``)
+        Args:
+            client_token (``str``):
+            execution (``JobExecutionData``):
+            timestamp (``datetime.datetime``):
         """
 
         self.client_token = kwargs.get('client_token')
@@ -1121,10 +1090,10 @@ class StartNextJobExecutionResponse(awsiot.ModeledClass):
 class StartNextPendingJobExecutionRequest(awsiot.ModeledClass):
     r"""
     Attributes:
-        * *client_token* (``str``)
-        * *status_details* (``typing.Dict[str, str]``)
-        * *step_timeout_in_minutes* (``int``)
-        * *thing_name* (``str``)
+        client_token (``str``):
+        status_details (``typing.Dict[str, str]``):
+        step_timeout_in_minutes (``int``):
+        thing_name (``str``):
 
     All attributes are None by default, and may be set by keyword in the constructor.
     """
@@ -1134,14 +1103,11 @@ class StartNextPendingJobExecutionRequest(awsiot.ModeledClass):
     def __init__(self, *args, **kwargs):
         r"""Initializes a StartNextPendingJobExecutionRequest instance
 
-        :param \**kwargs:
-            See below
-
-        :Keyword Arguments:
-            * *client_token* (``str``)
-            * *status_details* (``typing.Dict[str, str]``)
-            * *step_timeout_in_minutes* (``int``)
-            * *thing_name* (``str``)
+        Args:
+            client_token (``str``):
+            status_details (``typing.Dict[str, str]``):
+            step_timeout_in_minutes (``int``):
+            thing_name (``str``):
         """
 
         self.client_token = kwargs.get('client_token')
@@ -1167,7 +1133,7 @@ class StartNextPendingJobExecutionRequest(awsiot.ModeledClass):
 class StartNextPendingJobExecutionSubscriptionRequest(awsiot.ModeledClass):
     r"""
     Attributes:
-        * *thing_name* (``str``)
+        thing_name (``str``):
 
     All attributes are None by default, and may be set by keyword in the constructor.
     """
@@ -1177,11 +1143,8 @@ class StartNextPendingJobExecutionSubscriptionRequest(awsiot.ModeledClass):
     def __init__(self, *args, **kwargs):
         r"""Initializes a StartNextPendingJobExecutionSubscriptionRequest instance
 
-        :param \**kwargs:
-            See below
-
-        :Keyword Arguments:
-            * *thing_name* (``str``)
+        Args:
+            thing_name (``str``):
         """
 
         self.thing_name = kwargs.get('thing_name')
@@ -1193,16 +1156,16 @@ class StartNextPendingJobExecutionSubscriptionRequest(awsiot.ModeledClass):
 class UpdateJobExecutionRequest(awsiot.ModeledClass):
     r"""
     Attributes:
-        * *client_token* (``str``)
-        * *execution_number* (``int``)
-        * *expected_version* (``int``)
-        * *include_job_document* (``bool``)
-        * *include_job_execution_state* (``bool``)
-        * *job_id* (``str``)
-        * *status* (``str``)
-        * *status_details* (``typing.Dict[str, str]``)
-        * *step_timeout_in_minutes* (``int``)
-        * *thing_name* (``str``)
+        client_token (``str``):
+        execution_number (``int``):
+        expected_version (``int``):
+        include_job_document (``bool``):
+        include_job_execution_state (``bool``):
+        job_id (``str``):
+        status (``str``):
+        status_details (``typing.Dict[str, str]``):
+        step_timeout_in_minutes (``int``):
+        thing_name (``str``):
 
     All attributes are None by default, and may be set by keyword in the constructor.
     """
@@ -1212,20 +1175,17 @@ class UpdateJobExecutionRequest(awsiot.ModeledClass):
     def __init__(self, *args, **kwargs):
         r"""Initializes a UpdateJobExecutionRequest instance
 
-        :param \**kwargs:
-            See below
-
-        :Keyword Arguments:
-            * *client_token* (``str``)
-            * *execution_number* (``int``)
-            * *expected_version* (``int``)
-            * *include_job_document* (``bool``)
-            * *include_job_execution_state* (``bool``)
-            * *job_id* (``str``)
-            * *status* (``str``)
-            * *status_details* (``typing.Dict[str, str]``)
-            * *step_timeout_in_minutes* (``int``)
-            * *thing_name* (``str``)
+        Args:
+            client_token (``str``):
+            execution_number (``int``):
+            expected_version (``int``):
+            include_job_document (``bool``):
+            include_job_execution_state (``bool``):
+            job_id (``str``):
+            status (``str``):
+            status_details (``typing.Dict[str, str]``):
+            step_timeout_in_minutes (``int``):
+            thing_name (``str``):
         """
 
         self.client_token = kwargs.get('client_token')
@@ -1267,10 +1227,10 @@ class UpdateJobExecutionRequest(awsiot.ModeledClass):
 class UpdateJobExecutionResponse(awsiot.ModeledClass):
     r"""
     Attributes:
-        * *client_token* (``str``)
-        * *execution_state* (``JobExecutionState``)
-        * *job_document* (``typing.Dict[str, typing.Any]``)
-        * *timestamp* (``datetime.datetime``)
+        client_token (``str``):
+        execution_state (``JobExecutionState``):
+        job_document (``typing.Dict[str, typing.Any]``):
+        timestamp (``datetime.datetime``):
 
     All attributes are None by default, and may be set by keyword in the constructor.
     """
@@ -1280,14 +1240,11 @@ class UpdateJobExecutionResponse(awsiot.ModeledClass):
     def __init__(self, *args, **kwargs):
         r"""Initializes a UpdateJobExecutionResponse instance
 
-        :param \**kwargs:
-            See below
-
-        :Keyword Arguments:
-            * *client_token* (``str``)
-            * *execution_state* (``JobExecutionState``)
-            * *job_document* (``typing.Dict[str, typing.Any]``)
-            * *timestamp* (``datetime.datetime``)
+        Args:
+            client_token (``str``):
+            execution_state (``JobExecutionState``):
+            job_document (``typing.Dict[str, typing.Any]``):
+            timestamp (``datetime.datetime``):
         """
 
         self.client_token = kwargs.get('client_token')
@@ -1320,8 +1277,8 @@ class UpdateJobExecutionResponse(awsiot.ModeledClass):
 class UpdateJobExecutionSubscriptionRequest(awsiot.ModeledClass):
     r"""
     Attributes:
-        * *job_id* (``str``)
-        * *thing_name* (``str``)
+        job_id (``str``):
+        thing_name (``str``):
 
     All attributes are None by default, and may be set by keyword in the constructor.
     """
@@ -1331,12 +1288,9 @@ class UpdateJobExecutionSubscriptionRequest(awsiot.ModeledClass):
     def __init__(self, *args, **kwargs):
         r"""Initializes a UpdateJobExecutionSubscriptionRequest instance
 
-        :param \**kwargs:
-            See below
-
-        :Keyword Arguments:
-            * *job_id* (``str``)
-            * *thing_name* (``str``)
+        Args:
+            job_id (``str``):
+            thing_name (``str``):
         """
 
         self.job_id = kwargs.get('job_id')
